@@ -70,7 +70,7 @@ export default function Header(props) {
         </div>
         <div className="flex gap-2 text-2xl">
           <Link title="Go to home page" to="/Home" className="shrink-0 min-w-0">
-            <h1 className="hover:underline truncate">Homey</h1>
+            <h1 className="hover:underline truncate">Home</h1>
           </Link>
           {!props.home && (
             <>
