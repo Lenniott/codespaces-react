@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Header home="true" />
-      <main className="p-6 bg-red-500">
+      <main className="p-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-6 flex items-center gap-4">
             <form className="flex-grow">
