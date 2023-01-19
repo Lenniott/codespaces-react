@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-y-scroll accent-primary bg-neutral-175 min-h-screen font-light underline-offset-4 decoration-1">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,6 +21,81 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: "hsl(var(--primary) / <alpha-value>)",
+                light: "hsl(var(--primary-light) / <alpha-value>)",
+                lightest: "hsl(var(--primary-lightest) / <alpha-value>)",
+                dark: "hsl(var(--primary-dark) / <alpha-value>)",
+                darkest: "hsl(var(--primary-darkest) / <alpha-value>)",
+              },
+              neutral: {
+                75: "#f8f8f8",
+                175: "#ebebeb",
+              },
+            },
+            fontFamily: {
+              sans: ["roboto", "sans-serif"],
+            },
+          },
+          animation: {
+            popover: "popover 175ms cubic-bezier(0.4, 0, 0.2, 1)",
+            sidebar: "sidebar 175ms cubic-bezier(0.4, 0, 0.2, 1)",
+            modal: "modal 175ms cubic-bezier(0.4, 0, 0.2, 1)",
+            modalFade: "modalFade 175ms cubic-bezier(0.4, 0, 0.2, 1)",
+          },
+          keyframes: {
+            popover: {
+              "0%": {
+                opacity: "0",
+                transform: "scale(95%)",
+              },
+              "100%": {
+                opacity: "1",
+                transform: "scale(100%)",
+              },
+            },
+            sidebar: {
+              "0%": {
+                transform: "translateX(5%)",
+              },
+              "100%": {
+                transform: "translateX(0%)",
+              },
+            },
+            modal: {
+              "0%": {
+                opacity: "0",
+                transform: "scale(95%) translateY(5%)",
+              },
+              "100%": {
+                opacity: "1",
+                transform: "scale(100%) translateY(0%)",
+              },
+            },
+            modalFade: {
+              "0%": {
+                opacity: "0",
+              },
+              "100%": {
+                opacity: "1",
+              },
+            },
+          },
+        },
+        future: {
+          hoverOnlyWhenSupported: true,
+        },
+      };
+    </script>
     <title>React App</title>
   </head>
   <body>
