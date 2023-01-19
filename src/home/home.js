@@ -29,7 +29,13 @@ export default function Home() {
                 <label htmlFor="search" className="sr-only">
                   Search for programmes and courses
                 </label>
-                <input type="search" name="search" id="search" className="!pl-10" placeholder="Filter programmes and courses" />
+                <input
+                  type="search"
+                  name="search"
+                  id="search"
+                  className="!pl-10"
+                  placeholder="Filter programmes and courses"
+                />
               </div>
             </form>
             <div className="hidden relative md:flex gap-1.5 items-center">
@@ -42,7 +48,10 @@ export default function Home() {
               />
 
               <div className="text-sm">
-                <label htmlFor="showHidden" className="select-none text-neutral-700">
+                <label
+                  htmlFor="showHidden"
+                  className="select-none text-neutral-700"
+                >
                   Show hidden programmes
                 </label>
                 <span id="showHidden-description" className="sr-only">
@@ -50,25 +59,71 @@ export default function Home() {
                 </span>
               </div>
             </div>
-            <Button preset="primary" title="Add Programme" iconOnly={true} onClick={showModal}>
+            <Button
+              preset="primary"
+              title="Add Programme"
+              iconOnly={true}
+              onClick={showModal}
+            >
               <Plus />
             </Button>
           </div>
           <div className="mb-10">
-            <Programme link="/Newsfeed" title="Business Analytics Online 2020" code="BM202" academicYear="2023">
-              <CourseCard title="Text Mining for Economics and Finance" link="/Course/Newsfeed" />
-              <CourseCard title="Text Mining for Economics and Finance" link="/Course/Newsfeed" />
-              <CourseCard title="Text Mining for Economics and Finance" link="/Course/Newsfeed" />
-              <CourseCard title="Text Mining for Economics and Finance" link="/Course/Newsfeed" />
+            <Programme
+              link="/Newsfeed"
+              title="Business Analytics Online 2020"
+              code="BM202"
+              academicYear="2023"
+            >
+              <CourseCard
+                title="Text Mining for Economics and Finance"
+                link="/Course/Newsfeed"
+              />
+              <CourseCard
+                title="Text Mining for Economics and Finance"
+                link="/Course/Newsfeed"
+              />
+              <CourseCard
+                title="Text Mining for Economics and Finance"
+                link="/Course/Newsfeed"
+              />
+              <CourseCard
+                title="Text Mining for Economics and Finance"
+                link="/Course/Newsfeed"
+              />
             </Programme>
-            <Programme link="/Newsfeed" title="Business Analytics Online 2020" code="BM202" academicYear="2023">
-              <CourseCard title="Text Mining for Economics and Finance" link="/Course/Newsfeed" />
+            <Programme
+              link="/Newsfeed"
+              title="Business Analytics Online 2020"
+              code="BM202"
+              academicYear="2023"
+            >
+              <CourseCard
+                title="Text Mining for Economics and Finance"
+                link="/Course/Newsfeed"
+              />
             </Programme>
-            <Programme link="/Newsfeed" title="Business Analytics Online 2020" code="BM202" academicYear="2023">
-              <CourseCard title="Text Mining for Economics and Finance" link="/Course/Newsfeed" />
+            <Programme
+              link="/Newsfeed"
+              title="Business Analytics Online 2020"
+              code="BM202"
+              academicYear="2023"
+            >
+              <CourseCard
+                title="Text Mining for Economics and Finance"
+                link="/Course/Newsfeed"
+              />
             </Programme>
-            <Programme link="/Newsfeed" title="Business Analytics Online 2020" code="BM202" academicYear="2023">
-              <CourseCard title="Text Mining for Economics and Finance" link="/Course/Newsfeed" />
+            <Programme
+              link="/Newsfeed"
+              title="Business Analytics Online 2020"
+              code="BM202"
+              academicYear="2023"
+            >
+              <CourseCard
+                title="Text Mining for Economics and Finance"
+                link="/Course/Newsfeed"
+              />
             </Programme>
           </div>
         </div>
