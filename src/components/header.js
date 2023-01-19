@@ -8,7 +8,11 @@ export default function Header(props) {
       <div className="max-w-7xl mx-auto">
         <div className="flex mb-6 relative">
           <Link to="/home">
-            <img className="w-24" alt="Partner Logo" src="https://ins-prod-svc-files-filesbucket-1lgcxzgrlx564.s3.eu-west-1.amazonaws.com/6167833a-3764-46d6-a27d-27fb7666c2f0.png" />
+            <img
+              className="w-24"
+              alt="Partner Logo"
+              src="https://ins-prod-svc-files-filesbucket-1lgcxzgrlx564.s3.eu-west-1.amazonaws.com/6167833a-3764-46d6-a27d-27fb7666c2f0.png"
+            />
           </Link>
           <div className="ml-auto">
             <Button
@@ -66,13 +70,19 @@ export default function Header(props) {
         </div>
         <div className="flex gap-2 text-2xl">
           <Link title="Go to home page" to="/Home" className="shrink-0 min-w-0">
-            <h1 className="hover:underline truncate">Home</h1>
+            <h1 className="hover:underline truncate">Homey</h1>
           </Link>
           {!props.home && (
             <>
               <div className="shrink-0">/</div>
-              <Link title="Go to programme home page" to="/Newsfeed" className="min-w-0">
-                <h2 className="text-2xl text-neutral-500 hover:underline truncate">Business Analytics Online 2020</h2>
+              <Link
+                title="Go to programme home page"
+                to="/Newsfeed"
+                className="min-w-0"
+              >
+                <h2 className="text-2xl text-neutral-500 hover:underline truncate">
+                  Business Analytics Online 2020
+                </h2>
               </Link>
             </>
           )}
