@@ -1,4 +1,10 @@
-import React, { useState, useEffect, forwardRef, useRef, useImperativeHandle } from "react";
+import React, {
+  useState,
+  useEffect,
+  forwardRef,
+  useRef,
+  useImperativeHandle,
+} from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import OutsideClick from "./outside-click";
@@ -47,7 +53,9 @@ const Button = forwardRef((props, ref) => {
 
   const updatePopoverClasses = () => {
     setPopoverOriginClass(classNames(popoverOriginClasses[popoverPlacement]));
-    setPopoverPlacementClass(classNames(popoverPlacementClasses[popoverPlacement]));
+    setPopoverPlacementClass(
+      classNames(popoverPlacementClasses[popoverPlacement])
+    );
   };
 
   const showPopover = () => {
@@ -91,15 +99,22 @@ const Button = forwardRef((props, ref) => {
   const buttonClasses = {
     base: "transition-all duration-75 shrink-0 group/button inline-flex items-center justify-center whitespace-nowrap shadow-sm border outline-none",
     size: {
-      small: "h-[calc(2rem+2px)] min-w-[calc(2rem+2px)] py-1 px-2.5 gap-1 text-sm",
-      medium: "h-[calc(2.5rem+2px)] min-w-[calc(2.5rem+2px)] py-2 px-4 gap-2 text-base",
+      small:
+        "h-[calc(2rem+2px)] min-w-[calc(2rem+2px)] py-1 px-2.5 gap-1 text-sm",
+      medium:
+        "h-[calc(2.5rem+2px)] min-w-[calc(2.5rem+2px)] py-2 px-4 gap-2 text-base",
     },
     preset: {
-      primary: "bg-primary text-white border-primary hover:bg-primary-dark focus-visible:bg-primary-dark focus-visible:border-primary-darkest",
-      "primary-outline": "bg-white text-primary border-primary hover:bg-primary-lightest focus-visible:bg-primary-lightest focus-visible:border-primary-darkest",
-      secondary: "bg-white text-neutral-700 border-neutral-300 hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-primary",
-      white: "bg-white text-neutral-700 border-transparent hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-primary",
-      plain: "shadow-none text-neutral-700 border-transparent hover:bg-neutral-100 focus-visible                      :bg-neutral-100 focus-visible:border-primary",
+      primary:
+        "bg-primary text-white border-primary hover:bg-primary-dark focus-visible:bg-primary-dark focus-visible:border-primary-darkest",
+      "primary-outline":
+        "bg-white text-primary border-primary hover:bg-primary-lightest focus-visible:bg-primary-lightest focus-visible:border-primary-darkest",
+      secondary:
+        "bg-white text-neutral-700 border-neutral-300 hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-neutral-500",
+      white:
+        "bg-white text-neutral-700 border-transparent hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-neutral-500",
+      plain:
+        "shadow-none text-neutral-700 border-transparent hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-neutral-500",
     },
     iconOnly: {
       small: "w-[calc(2rem+2px)]",
@@ -111,9 +126,15 @@ const Button = forwardRef((props, ref) => {
     },
   };
 
-  const buttonClassName = classNames(buttonClasses.base, buttonClasses.size[size], buttonClasses.preset[preset], buttonClasses.fluid[fluid], {
-    [buttonClasses.iconOnly[size]]: iconOnly,
-  });
+  const buttonClassName = classNames(
+    buttonClasses.base,
+    buttonClasses.size[size],
+    buttonClasses.preset[preset],
+    buttonClasses.fluid[fluid],
+    {
+      [buttonClasses.iconOnly[size]]: iconOnly,
+    }
+  );
 
   return popover ? (
     <OutsideClick hidePopover={hidePopover}>
@@ -126,7 +147,17 @@ const Button = forwardRef((props, ref) => {
         aria-expanded={ariaExpanded}
         aria-controls={ariaControls}
       >
-        {children && <span className={iconOnly ? "transition-transform duration-75 group-hover/button:scale-90 group-focus-visible/button:scale-90" : " "}>{children}</span>}
+        {children && (
+          <span
+            className={
+              iconOnly
+                ? "transition-transform duration-75 group-hover/button:scale-90 group-focus-visible/button:scale-90"
+                : " "
+            }
+          >
+            {children}
+          </span>
+        )}
         {label && (
           <span className="relative truncate after:transition-all after:opacity-0 after:absolute after:left-0 after:right-0 after:bottom-px after:h-px after:bg-current after:w-0 group-hover/button:after:w-full group-focus-visible/button:after:w-full group-hover/button:after:opacity-100 group-focus-visible/button:after:opacity-100">
             {label}
@@ -136,19 +167,45 @@ const Button = forwardRef((props, ref) => {
       {popupIsVisible && (
         <div
           className={`min-w-[8rem]
-            ${popoverWidth ? popoverWidth : `w-[${buttonRef.current.clientWidth}px]`}
+            ${
+              popoverWidth
+                ? popoverWidth
+                : `w-[${buttonRef.current.clientWidth}px]`
+            }
             ${popoverPlacementClass}
-            ${popoverPlacement === "top-left" ? `top-[${buttonPosition.top}px] left-[${buttonPosition.left}px]` : " "}
-            ${popoverPlacement === "top-right" ? `top-[${buttonPosition.top}px] left-[${buttonPosition.right}px]` : " "}
-            ${popoverPlacement === "bottom-right" ? `top-[calc(${buttonPosition.top}px+${buttonRef.current.clientHeight}px)] left-[${buttonPosition.right}px]` : " "}
-            ${popoverPlacement === "bottom-left" ? `top-[calc(${buttonPosition.top}px+${buttonRef.current.clientHeight}px)] left-[${buttonPosition.left}px]` : " "}
+            ${
+              popoverPlacement === "top-left"
+                ? `top-[${buttonPosition.top}px] left-[${buttonPosition.left}px]`
+                : " "
+            }
+            ${
+              popoverPlacement === "top-right"
+                ? `top-[${buttonPosition.top}px] left-[${buttonPosition.right}px]`
+                : " "
+            }
+            ${
+              popoverPlacement === "bottom-right"
+                ? `top-[calc(${buttonPosition.top}px+${buttonRef.current.clientHeight}px)] left-[${buttonPosition.right}px]`
+                : " "
+            }
+            ${
+              popoverPlacement === "bottom-left"
+                ? `top-[calc(${buttonPosition.top}px+${buttonRef.current.clientHeight}px)] left-[${buttonPosition.left}px]`
+                : " "
+            }
           `}
         >
           <div
-            className={popoverOriginClass + " animate-popover py-2 max-w-[calc(100vw-2rem)] bg-white shadow-lg shadow-neutral-800/10 ring-1 ring-black/5 focus:outline-none"}
+            className={
+              popoverOriginClass +
+              " animate-popover py-2 max-w-[calc(100vw-2rem)] bg-white shadow-lg shadow-neutral-800/10 ring-1 ring-black/5 focus:outline-none"
+            }
             onClick={(e) => e.stopPropagation()}
           >
-            <div onClick={popoverHideOnClick && hidePopover} className="block px-4 py-2 text-sm">
+            <div
+              onClick={popoverHideOnClick && hidePopover}
+              className="block px-4 py-2 text-sm"
+            >
               {popoverContent}
             </div>
           </div>
@@ -156,8 +213,26 @@ const Button = forwardRef((props, ref) => {
       )}
     </OutsideClick>
   ) : (
-    <button ref={buttonRef} type={type} className={className ? className : buttonClassName} onClick={onClick} title={title} aria-expanded={ariaExpanded} aria-controls={ariaControls}>
-      {children && <span className={iconOnly ? "transition-transform duration-75 group-hover/button:scale-90 group-focus-visible/button:scale-90" : " "}>{children}</span>}
+    <button
+      ref={buttonRef}
+      type={type}
+      className={className ? className : buttonClassName}
+      onClick={onClick}
+      title={title}
+      aria-expanded={ariaExpanded}
+      aria-controls={ariaControls}
+    >
+      {children && (
+        <span
+          className={
+            iconOnly
+              ? "transition-transform duration-75 group-hover/button:scale-90 group-focus-visible/button:scale-90"
+              : " "
+          }
+        >
+          {children}
+        </span>
+      )}
       {label && (
         <span className="relative truncate after:transition-all after:opacity-0 after:absolute after:left-0 after:right-0 after:bottom-px after:h-px after:bg-current after:w-0 group-hover/button:after:w-full group-focus-visible/button:after:w-full group-hover/button:after:opacity-100 group-focus-visible/button:after:opacity-100">
           {label}
@@ -182,7 +257,12 @@ Button.propTypes = {
   className: PropTypes.string,
   popover: PropTypes.bool,
   popoverContent: PropTypes.node,
-  popoverPlacement: PropTypes.oneOf(["top-left", "top-right", "bottom-right", "bottom-left"]),
+  popoverPlacement: PropTypes.oneOf([
+    "top-left",
+    "top-right",
+    "bottom-right",
+    "bottom-left",
+  ]),
   popoverToggle: PropTypes.bool,
   popoverWidth: PropTypes.string,
   popoverHideOnClick: PropTypes.bool,
