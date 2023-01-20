@@ -51,7 +51,7 @@ const HomeAddProgrammeModal = ({ visible, hide }) => {
               ) : (
                 <div className="relative group/upload">
                   <img
-                    className="border border-neutral-200 overflow-hidden object-cover object-center aspect-[4/2]"
+                    className="ring-1 ring-neutral-200 overflow-hidden object-cover object-center aspect-[4/2]"
                     src={file}
                     alt="Preview of uploaded logo"
                   />
