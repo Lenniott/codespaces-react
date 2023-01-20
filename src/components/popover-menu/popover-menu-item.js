@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 const PopoverMenuItem = ({ icon, title, link, button, onClick, preset }) => {
   const menuItemClasses = {
-    base: "text-left w-full flex gap-3 items-center py-2 px-2 hover:underline [&>.icon>svg]:w-4 [&>.icon>svg]:h-4",
+    base: "text-left w-full flex gap-3 items-center py-2 px-2 hover:underline [&>i>svg]:w-4 [&>i>svg]:h-4",
     preset: {
       default: "text-neutral-900 [&>.icon]:text-neutral-400",
       primary: "text-primary [&>.icon]:text-primary/50",
@@ -21,12 +21,12 @@ const PopoverMenuItem = ({ icon, title, link, button, onClick, preset }) => {
     <li>
       {button ? (
         <button type="button" onClick={onClick} className={menuItemClassName}>
-          <span className="icon">{icon}</span>
+          <i>{icon}</i>
           <span>{title}</span>
         </button>
       ) : (
         <Link to={link} className={menuItemClassName}>
-          <span className="icon">{icon}</span>
+          <i>{icon}</i>
           <span>{title}</span>
         </Link>
       )}
