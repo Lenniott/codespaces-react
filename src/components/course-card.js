@@ -2,23 +2,48 @@ import { Button } from "./button";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { MoreVertical, Edit2, Share, Link2, Copy, Trash } from "react-feather";
+import { PopoverMenu } from "./popover-menu/popover-menu";
+import { PopoverMenuItem } from "./popover-menu/popover-menu-item";
+import { PopoverMenuSeperator } from "./popover-menu/popover-menu-seperator";
 
-const CourseCard = ({ link, title, image, code, academicYear, startDate, EndDate, courseLeader }) => {
+const CourseCard = ({
+  link,
+  title,
+  image,
+  code,
+  academicYear,
+  startDate,
+  EndDate,
+  courseLeader,
+}) => {
   return (
     <div className="relative">
-      <Link to={link} className="relative border border-neutral-200 bg-white p-3 flex group cursor-pointer">
+      <Link
+        to={link}
+        className="relative border border-neutral-200 bg-white p-3 flex group cursor-pointer"
+      >
         <div className="shrink-0 -m-3 mr-0 relative">
-          <img className="m-px aspect-square w-[6.75rem] object-cover" src={image} alt={title} />
+          <img
+            className="m-px aspect-square w-[6.75rem] object-cover"
+            src={image}
+            alt={title}
+          />
           {code ||
             (academicYear && (
               <div className="px-2 py-1.5 text-white text-sm absolute top-px left-px right-px bg-primary/90">
                 {code && <div className="truncate">{code}</div>}
-                {academicYear && <div className="truncate text-primary-light">{academicYear}</div>}
+                {academicYear && (
+                  <div className="truncate text-primary-light">
+                    {academicYear}
+                  </div>
+                )}
               </div>
             ))}
         </div>
         <div className="flex-grow pl-3 min-w-0 flex flex-col justify-between">
-          {title && <div className="line-clamp group-hover:underline">{title}</div>}
+          {title && (
+            <div className="line-clamp group-hover:underline">{title}</div>
+          )}
           <div className="text-sm text-neutral-600 pr-8">
             {courseLeader && <div className="truncate">{courseLeader}</div>}
             {startDate ||
@@ -39,40 +64,24 @@ const CourseCard = ({ link, title, image, code, academicYear, startDate, EndDate
           popover={true}
           popoverWidth="w-40"
           popoverContent={
-            <ul className="-m-4 p-1">
-              <li>
-                <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                  <Edit2 className="text-neutral-400 w-4 h-4" />
-                  <span>Edit</span>
-                </button>
-              </li>
-              <li class="my-1 -mx-1 border-b border-neutral-200"></li>
-              <li>
-                <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                  <Share className="text-neutral-400 w-4 h-4" />
-                  <span>Share</span>
-                </button>
-              </li>
-              <li>
-                <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                  <Link2 className="text-neutral-400 w-4 h-4" />
-                  <span>Link</span>
-                </button>
-              </li>
-              <li>
-                <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                  <Copy className="text-neutral-400 w-4 h-4" />
-                  <span>Copy to...</span>
-                </button>
-              </li>
-              <li class="my-1 -mx-1 border-b border-neutral-200"></li>
-              <li>
-                <button className="text-red-600 text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                  <Trash className="text-red-600/50 w-4 h-4" />
-                  <span>Delete</span>
-                </button>
-              </li>
-            </ul>
+            <PopoverMenu>
+              <PopoverMenuItem title="Edit" button={true} icon={<Edit2 />} />
+              <PopoverMenuSeperator />
+              <PopoverMenuItem title="Share" button={true} icon={<Share />} />
+              <PopoverMenuItem title="Link" button={true} icon={<Link2 />} />
+              <PopoverMenuItem
+                title="Copy to..."
+                button={true}
+                icon={<Copy />}
+              />
+              <PopoverMenuSeperator />
+              <PopoverMenuItem
+                title="Delete"
+                preset="danger"
+                button={true}
+                icon={<Trash />}
+              />
+            </PopoverMenu>
           }
           popoverPlacement="bottom-right"
         >

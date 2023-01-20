@@ -72,21 +72,13 @@ const Programme = ({
             popoverWidth="w-40"
             popoverContent={
               <PopoverMenu>
-                <PopoverMenuItem
-                  title="Edit"
-                  button={true}
-                  icon={<Edit2 className="text-neutral-400 w-4 h-4" />}
-                />
-                <PopoverMenuItem
-                  title="Hide"
-                  button={true}
-                  icon={<EyeOff className="text-neutral-400 w-4 h-4" />}
-                />
+                <PopoverMenuItem title="Edit" button={true} icon={<Edit2 />} />
+                <PopoverMenuItem title="Hide" button={true} icon={<EyeOff />} />
                 <PopoverMenuSeperator />
                 <PopoverMenuItem
                   title="Add Course"
                   button={true}
-                  icon={<Plus className="text-neutral-400 w-4 h-4" />}
+                  icon={<Plus />}
                 />
               </PopoverMenu>
             }
