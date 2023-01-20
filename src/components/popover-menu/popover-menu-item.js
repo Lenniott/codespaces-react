@@ -17,19 +17,19 @@ const PopoverMenuItem = ({ icon, title, link, button, onClick, preset }) => {
     menuItemClasses.preset[preset]
   );
 
-  return { button } ? (
+  return (
     <li>
-      <button type="button" onClick={onClick} className={menuItemClassName}>
-        <span className="icon">{icon}</span>
-        <span>{title}</span>
-      </button>
-    </li>
-  ) : (
-    <li>
-      <Link to={link} className={menuItemClassName}>
-        <span className="icon">{icon}</span>
-        <span>{title}</span>
-      </Link>
+      {button ? (
+        <button type="button" onClick={onClick} className={menuItemClassName}>
+          <span className="icon">{icon}</span>
+          <span>{title}</span>
+        </button>
+      ) : (
+        <Link to={link} className={menuItemClassName}>
+          <span className="icon">{icon}</span>
+          <span>{title}</span>
+        </Link>
+      )}
     </li>
   );
 };
