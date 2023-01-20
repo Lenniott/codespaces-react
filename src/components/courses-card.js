@@ -1,6 +1,9 @@
 import { Button } from "./button";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { PopoverMenu } from "./popover-menu/popover-menu";
+import { PopoverMenuItem } from "./popover-menu/popover-menu-item";
+import { PopoverMenuSeperator } from "./popover-menu/popover-menu-seperator";
 import {
   MoreVertical,
   Globe,
@@ -8,7 +11,7 @@ import {
   Share,
   Link2,
   Copy,
-  Trash
+  Trash,
 } from "react-feather";
 
 const CoursesCard = ({ link, title, image }) => {
@@ -42,40 +45,24 @@ const CoursesCard = ({ link, title, image }) => {
           popover={true}
           popoverWidth="w-40"
           popoverContent={
-            <ul className="-m-4 p-1">
-              <li>
-                <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                  <Edit2 className="text-neutral-400 w-4 h-4" />
-                  <span>Edit</span>
-                </button>
-              </li>
-              <li class="my-1 -mx-1 border-b border-neutral-200"></li>
-              <li>
-                <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                  <Share className="text-neutral-400 w-4 h-4" />
-                  <span>Share</span>
-                </button>
-              </li>
-              <li>
-                <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                  <Link2 className="text-neutral-400 w-4 h-4" />
-                  <span>Link</span>
-                </button>
-              </li>
-              <li>
-                <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                  <Copy className="text-neutral-400 w-4 h-4" />
-                  <span>Copy to...</span>
-                </button>
-              </li>
-              <li class="my-1 -mx-1 border-b border-neutral-200"></li>
-              <li>
-                <button className="text-red-600 text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                  <Trash className="text-red-600/50 w-4 h-4" />
-                  <span>Delete</span>
-                </button>
-              </li>
-            </ul>
+            <PopoverMenu>
+              <PopoverMenuItem title="Edit" button={true} icon={<Edit2 />} />
+              <PopoverMenuSeperator />
+              <PopoverMenuItem title="Share" button={true} icon={<Share />} />
+              <PopoverMenuItem title="Link" button={true} icon={<Link2 />} />
+              <PopoverMenuItem
+                title="Copy to..."
+                button={true}
+                icon={<Copy />}
+              />
+              <PopoverMenuSeperator />
+              <PopoverMenuItem
+                title="Delete"
+                preset="danger"
+                button={true}
+                icon={<Trash />}
+              />
+            </PopoverMenu>
           }
           popoverPlacement="bottom-right"
         >
@@ -89,12 +76,12 @@ const CoursesCard = ({ link, title, image }) => {
 CoursesCard.propTypes = {
   link: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  image: PropTypes.string
+  image: PropTypes.string,
 };
 
 CoursesCard.defaultProps = {
   title: "Course Title",
-  image: "https://i.ibb.co/6gT1WVt/Course-image-16x9-01.png"
+  image: "https://i.ibb.co/6gT1WVt/Course-image-16x9-01.png",
 };
 
 export { CoursesCard };

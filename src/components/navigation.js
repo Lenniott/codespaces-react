@@ -72,7 +72,10 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav aria-label="Main Menu" className="px-6 bg-white whitespace-nowrap relative">
+    <nav
+      aria-label="Main Menu"
+      className="px-6 bg-white whitespace-nowrap relative"
+    >
       <div className="max-w-7xl mx-auto overflow-hidden">
         <ul ref={listRef} className="relative z-10 flex">
           {navigationItems.map((item, i) => (
@@ -80,9 +83,12 @@ export default function Navigation() {
               <Link
                 to={item.href}
                 className={`${
-                  item.title === "Courses" && location.pathname.toLowerCase().includes("/course/")
+                  item.title === "Courses" &&
+                  location.pathname.toLowerCase().includes("/course/")
                     ? "bg-primary text-white"
-                    : location.pathname.toLowerCase().startsWith(item.href.toLowerCase())
+                    : location.pathname
+                        .toLowerCase()
+                        .startsWith(item.href.toLowerCase())
                     ? "text-primary underline"
                     : "text-neutral-700 hover:text-neutral-900 hover:underline hover:decoration-neutral-500"
                 } py-1 px-3 block`}
@@ -94,8 +100,17 @@ export default function Navigation() {
         </ul>
         {showMenuButton && (
           <div className="absolute -mt-px -top-px right-4 z-10 bg-white">
-            <div aria-hidden="true" className="pointer-events-none absolute top-0 bottom-0 -left-14 w-14 bg-gradient-to-l from-white"></div>
-            <Button iconOnly={true} preset="plain" onClick={handleNavHidden} ariaExpanded={!navHidden} ariaControls="subMenu">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute top-0 bottom-0 -left-14 w-14 bg-gradient-to-l from-white"
+            ></div>
+            <Button
+              iconOnly={true}
+              preset="plain"
+              onClick={handleNavHidden}
+              ariaExpanded={!navHidden}
+              ariaControls="subMenu"
+            >
               <Menu className="h-5 w-5 transition-color hover:text-primary group-focus-within:text-primary" />
             </Button>
           </div>
@@ -113,9 +128,12 @@ export default function Navigation() {
             <Link
               to={item.href}
               className={`${
-                item.title === "Courses" && location.pathname.toLowerCase().includes("/course/")
+                item.title === "Courses" &&
+                location.pathname.toLowerCase().includes("/courses/")
                   ? "bg-primary text-white"
-                  : location.pathname.toLowerCase().startsWith(item.href.toLowerCase())
+                  : location.pathname
+                      .toLowerCase()
+                      .startsWith(item.href.toLowerCase())
                   ? "text-primary underline"
                   : "text-neutral-700 hover:text-neutral-900 hover:underline hover:decoration-neutral-500"
               } py-1 px-3 block`}
@@ -125,7 +143,13 @@ export default function Navigation() {
           </li>
         ))}
       </ul>
-      <button onClick={handleNavHidden} type="button" className={`${navHidden ? " hidden " : " block "} fixed inset-0 bg-black/0 peer-empty:hidden`}>
+      <button
+        onClick={handleNavHidden}
+        type="button"
+        className={`${
+          navHidden ? " hidden " : " block "
+        } fixed inset-0 bg-black/0 peer-empty:hidden`}
+      >
         <span className="sr-only">Close Menu</span>
       </button>
     </nav>

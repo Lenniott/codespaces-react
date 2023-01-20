@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
 import { Button } from "./button";
 import { Bell, User, Settings, HelpCircle, LogOut, Award } from "react-feather";
+import { PopoverMenu } from "./popover-menu/popover-menu";
+import { PopoverMenuItem } from "./popover-menu/popover-menu-item";
+import { PopoverMenuSeperator } from "./popover-menu/popover-menu-seperator";
 
 export default function Header(props) {
   return (
@@ -19,48 +22,42 @@ export default function Header(props) {
               label="JT"
               popover={true}
               popoverContent={
-                <ul className="-m-4 p-1">
-                  <li>
-                    <li>
-                      <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                        <Bell className="text-neutral-400 w-4 h-4" />
-                        <span>Notifications</span>
-                      </button>
-                    </li>
-                  </li>
-                  <li>
-                    <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                      <User className="text-neutral-400 w-4 h-4" />
-                      <span>Profile</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                      <Award className="text-neutral-400 w-4 h-4" />
-                      <span>Grading Dashboard</span>
-                    </button>
-                  </li>
-                  <li className="my-1 -mx-1 border-b border-neutral-200"></li>
-                  <li>
-                    <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                      <Settings className="text-neutral-400 w-4 h-4" />
-                      <span>Partner Settings</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                      <HelpCircle className="text-neutral-400 w-4 h-4" />
-                      <span>Help Center</span>
-                    </button>
-                  </li>
-                  <li className="my-1 -mx-1 border-b border-neutral-200"></li>
-                  <li>
-                    <button className="text-left w-full flex gap-3 items-center py-2 px-2 hover:underline">
-                      <LogOut className="text-neutral-400 w-4 h-4" />
-                      <span>Log Out</span>
-                    </button>
-                  </li>
-                </ul>
+                <PopoverMenu>
+                  <PopoverMenuItem
+                    title="Notifications"
+                    button={true}
+                    icon={<Bell />}
+                  />
+                  <PopoverMenuItem
+                    title="Profile"
+                    button={true}
+                    icon={<User />}
+                  />
+                  <PopoverMenuItem
+                    title="Grading Dashboard"
+                    button={true}
+                    icon={<Award />}
+                  />
+
+                  <PopoverMenuSeperator />
+                  <PopoverMenuItem
+                    title="Partner Settings"
+                    button={true}
+                    icon={<Settings />}
+                  />
+                  <PopoverMenuItem
+                    title="Help Center"
+                    button={true}
+                    icon={<HelpCircle />}
+                  />
+                  <PopoverMenuSeperator />
+                  <PopoverMenuItem
+                    title="Log Out"
+                    preset="danger"
+                    button={true}
+                    icon={<LogOut />}
+                  />
+                </PopoverMenu>
               }
               popoverPlacement="bottom-right"
               className="transition-all group text-white font-normal tracking-wide w-10 h-10 rounded-full bg-indigo-600 hover:bg-indigo-700 [&>span]:after:-bottom-px"
@@ -70,7 +67,7 @@ export default function Header(props) {
         </div>
         <div className="flex gap-2 text-2xl">
           <Link title="Go to home page" to="/Home" className="shrink-0 min-w-0">
-            <h1 className="hover:underline truncate">Homey</h1>
+            <h1 className="hover:underline truncate">Home</h1>
           </Link>
           {!props.home && (
             <>
