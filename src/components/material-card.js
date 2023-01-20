@@ -11,7 +11,7 @@ const MaterialCard = ({
   screenCount,
   duration,
   type,
-  platform
+  platform,
 }) => {
   return (
     <div className="group bg-white aspect-video min-h-[8rem] max-w-full relative shadow border border-white">
@@ -61,7 +61,7 @@ const MaterialCard = ({
         </div>
       </Link>
       <div className="absolute top-3 right-3 transition-opacity opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto focus-within:opacity-100 focus-within:pointer-events-auto peer-focus:opacity-100 peer-focus:pointer-events-auto">
-        <Button preset="plain" iconOnly="true" title="Settings">
+        <Button preset="transparent" iconOnly="true" title="Settings">
           <Settings className="h-5 w-5" />
         </Button>
       </div>
@@ -76,7 +76,7 @@ MaterialCard.propTypes = {
   screenCount: PropTypes.number,
   duration: PropTypes.string,
   type: PropTypes.oneOf(["Session", "Screen"]).isRequired,
-  platform: PropTypes.oneOf(["Online", "Campus"])
+  platform: PropTypes.oneOf(["Online", "Campus"]),
 };
 
 export { MaterialCard };

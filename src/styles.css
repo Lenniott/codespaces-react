@@ -1,8 +1,8 @@
 @import "./forms.css";
 
 :root {
-  --primary-hue: 327deg;
-  --primary-saturation: 65%;
+  --primary-hue: 211deg;
+  --primary-saturation: 100%;
 
   --primary: var(--primary-hue) var(--primary-saturation) 21%;
   --primary-light: var(--primary-hue) var(--primary-saturation) 81%;

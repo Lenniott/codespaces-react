@@ -22,6 +22,7 @@ import CourseMaterialsSession from "./course/materials-session";
 import CourseMaterialsSessionScreen from "./course/materials-sessions-screen";
 import CourseMaterialsSessionScreen2 from "./course/materials-sessions-screen-2";
 import CourseMaterialsSessionScreen3 from "./course/materials-sessions-screen-3";
+import Buttons from "./playground/buttons";
 
 export default function App() {
   return (
@@ -37,10 +38,22 @@ export default function App() {
           <Route path="/Course/Calendar" element={<CourseCalendar />} />
           <Route path="/Course/Overview" element={<CourseOverview />} />
           <Route path="/Course/Materials" element={<CourseMaterials />} />
-          <Route path="/Course/Materials/Session" element={<CourseMaterialsSession />} />
-          <Route path="/Course/Materials/Session/Screen" element={<CourseMaterialsSessionScreen />} />
-          <Route path="/Course/Materials/Session/Screen2" element={<CourseMaterialsSessionScreen2 />} />
-          <Route path="/Course/Materials/Session/Screen3" element={<CourseMaterialsSessionScreen3 />} />
+          <Route
+            path="/Course/Materials/Session"
+            element={<CourseMaterialsSession />}
+          />
+          <Route
+            path="/Course/Materials/Session/Screen"
+            element={<CourseMaterialsSessionScreen />}
+          />
+          <Route
+            path="/Course/Materials/Session/Screen2"
+            element={<CourseMaterialsSessionScreen2 />}
+          />
+          <Route
+            path="/Course/Materials/Session/Screen3"
+            element={<CourseMaterialsSessionScreen3 />}
+          />
           <Route path="/Course/Assessment" element={<CourseAssessment />} />
           <Route path="/Course/Readings" element={<CourseReadings />} />
           <Route path="/Course/LiveClasses" element={<CourseLiveClasses />} />
@@ -51,6 +64,7 @@ export default function App() {
           <Route path="/Team" element={<Team />} />
           <Route path="/Grades" element={<Grades />} />
           <Route path="/Settings" element={<Settings />} />
+          <Route path="/Playground/Buttons" element={<Buttons />} />
           <Route path="*" element={<div>ERROR</div>} />
         </Routes>
       </BrowserRouter>

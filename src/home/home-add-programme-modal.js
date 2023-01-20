@@ -24,9 +24,16 @@ const HomeAddProgrammeModal = ({ visible, hide }) => {
                 <Button label="Upload Logo" fluid="true">
                   <UploadCloud className="w-4 h-4" />
                 </Button>
-                <input className="cursor-pointer absolute block py-2 px-4 w-full opacity-0 inset-0" type="file" name="documents[]" accept="image/*" />
+                <input
+                  className="cursor-pointer absolute block py-2 px-4 w-full opacity-0 inset-0"
+                  type="file"
+                  name="documents[]"
+                  accept="image/*"
+                />
               </div>
-              <div className="text-neutral-500 text-xs mt-1.5">Valid formats · PNG, JPEG (max. 300 x 300px, 50mb)</div>
+              <div className="text-neutral-500 text-xs mt-1.5">
+                Valid formats · PNG, JPEG (max. 300 x 300px, 50mb)
+              </div>
             </div>
             <div>
               <label htmlFor="programmeName" className="mb-1 flex items-center">
@@ -42,7 +49,10 @@ const HomeAddProgrammeModal = ({ visible, hide }) => {
               </label>
               <div className="relative">
                 <input id="programmeCode" type="text" />
-                <div title="Code is used to differentiate your programme and is only visible to staff." className="absolute top-1/2 -translate-y-1/2 right-2.5">
+                <div
+                  title="Code is used to differentiate your programme and is only visible to staff."
+                  className="absolute top-1/2 -translate-y-1/2 right-2.5"
+                >
                   <HelpCircle className="h-5 w-5 text-neutral-500 cursor-pointer" />
                 </div>
               </div>
@@ -73,7 +83,7 @@ const HomeAddProgrammeModal = ({ visible, hide }) => {
         }
         footer={
           <>
-            <Button preset="secondary" label="Cancel" onClick={hideModal} />
+            <Button preset="default" label="Cancel" onClick={hideModal} />
             <Button preset="primary" label="Add" onClick={hideModal} />
           </>
         }

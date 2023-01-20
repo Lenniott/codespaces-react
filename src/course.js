@@ -21,15 +21,28 @@ export default function Courses() {
             <div className="lg:col-span-3">
               <section>
                 <ul className="grid gap-3 sm:gap-4 grid-cols-[repeat(auto-fill,minmax(11rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(14.5rem,1fr))]">
-                  <CoursesCard title="Text Mining for Economics and Finance" link="/Course/Newsfeed" />
-                  <CoursesCard title="Text Mining for Economics and Finance" link="/Course/Newsfeed" />
-                  <CoursesCard title="Text Mining for Economics and Finance" link="/Course/Newsfeed" />
+                  <CoursesCard
+                    title="Text Mining for Economics and Finance"
+                    link="/Course/Newsfeed"
+                  />
+                  <CoursesCard
+                    title="Text Mining for Economics and Finance"
+                    link="/Course/Newsfeed"
+                  />
+                  <CoursesCard
+                    title="Text Mining for Economics and Finance"
+                    link="/Course/Newsfeed"
+                  />
                 </ul>
               </section>
             </div>
             <aside className="hidden lg:block">
               <div className="space-y-3">
-                <Button preset="primary-outline" label="All courses" fluid={true}></Button>
+                <Button
+                  preset="secondary"
+                  label="All courses"
+                  fluid={true}
+                ></Button>
                 <Button label="Example Tag" fluid={true}></Button>
                 <Button label="Example Tag" fluid={true}></Button>
                 <Button label="Example Tag" fluid={true}></Button>

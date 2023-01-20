@@ -58,7 +58,7 @@ const CourseCard = ({
       </Link>
       <div className="absolute bottom-2 right-2">
         <Button
-          preset="plain"
+          preset="transparent"
           size="small"
           iconOnly={true}
           popover={true}
