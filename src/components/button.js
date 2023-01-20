@@ -100,7 +100,7 @@ const Button = forwardRef((props, ref) => {
     base: "transition-all duration-75 shrink-0 group/button inline-flex items-center justify-center whitespace-nowrap shadow-sm border outline-none",
     size: {
       small:
-        "h-[calc(2rem+2px)] min-w-[calc(2rem+2px)] py-1 px-2.5 gap-1 text-sm",
+        "h-[calc(2rem+2px)] min-w-[calc(2rem+2px)] py-1 px-2.5 gap-1.5 text-sm",
       medium:
         "h-[calc(2.5rem+2px)] min-w-[calc(2.5rem+2px)] py-2 px-4 gap-2 text-base",
     },

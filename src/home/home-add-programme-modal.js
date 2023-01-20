@@ -1,8 +1,15 @@
+import { useState } from "react";
 import { Button } from ".././components/button";
 import { Modal } from "../components/modal/modal";
-import { HelpCircle, UploadCloud } from "react-feather";
+import { HelpCircle, UploadCloud, X } from "react-feather";
 
 const HomeAddProgrammeModal = ({ visible, hide }) => {
+  const [file, setFile] = useState();
+
+  function handleFileChange(e) {
+    setFile(URL.createObjectURL(e.target.files[0]));
+  }
+
   const hideModal = () => {
     hide(true);
   };
@@ -17,23 +24,59 @@ const HomeAddProgrammeModal = ({ visible, hide }) => {
         content={
           <form className="grid gap-5 mt-1 mb-2" autoComplete="off">
             <div>
-              <label htmlFor="programmeLogo" className="mb-1 flex items-center">
-                <span className="text-neutral-700">Logo</span>
-              </label>
-              <div className="overflow-hidden relative shadow-sm group/button">
-                <Button label="Upload Logo" fluid="true">
-                  <UploadCloud className="w-4 h-4" />
-                </Button>
-                <input
-                  className="cursor-pointer absolute block py-2 px-4 w-full opacity-0 inset-0"
-                  type="file"
-                  name="documents[]"
-                  accept="image/*"
-                />
-              </div>
-              <div className="text-neutral-500 text-xs mt-1.5">
-                Valid formats · PNG, JPEG (max. 300 x 300px, 50mb)
-              </div>
+              {!file ? (
+                <div>
+                  <label
+                    htmlFor="programmeLogo"
+                    className="mb-1 flex items-center"
+                  >
+                    <span className="text-neutral-700">Logo</span>
+                  </label>
+                  <div className="overflow-hidden relative shadow-sm group/button">
+                    <Button label="Upload Logo" fluid="true">
+                      <UploadCloud className="w-4 h-4" />
+                    </Button>
+                    <input
+                      className="cursor-pointer absolute block py-2 px-4 w-full opacity-0 inset-0"
+                      type="file"
+                      name="documents[]"
+                      accept="image/*"
+                      onChange={handleFileChange}
+                    />
+                  </div>
+                  <div className="text-neutral-500 text-xs mt-1.5">
+                    Valid formats · PNG, JPEG (max. 300 x 300px, 50mb)
+                  </div>
+                </div>
+              ) : (
+                <div className="relative group/upload">
+                  <img
+                    className="border border-neutral-200 overflow-hidden object-cover object-center aspect-[4/2]"
+                    src={file}
+                    alt="Preview of uploaded logo"
+                  />
+                  <div className="inset-0 absolute transition-colors bg-black/0 group-hover/upload:bg-black/20"></div>
+                  <div className="absolute top-3 left-3 right-3 flex justify-between">
+                    <Button
+                      preset="no-border"
+                      size="small"
+                      iconOnly="true"
+                      title="Replace Logo"
+                    >
+                      <UploadCloud className="w-4 h-4" />
+                    </Button>
+                    <Button
+                      preset="no-border"
+                      size="small"
+                      iconOnly="true"
+                      title="Remove Logo"
+                      onClick={() => setFile("")}
+                    >
+                      <X className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </div>
+              )}
             </div>
             <div>
               <label htmlFor="programmeName" className="mb-1 flex items-center">
