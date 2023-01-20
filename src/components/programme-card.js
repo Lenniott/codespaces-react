@@ -78,6 +78,7 @@ const Programme = ({
                 <PopoverMenuItem
                   title="Add Course"
                   button={true}
+                  preset="primary"
                   icon={<Plus />}
                 />
               </PopoverMenu>
