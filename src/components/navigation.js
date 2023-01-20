@@ -106,7 +106,7 @@ export default function Navigation() {
             ></div>
             <Button
               iconOnly={true}
-              preset="plain"
+              preset="transparent"
               onClick={handleNavHidden}
               ariaExpanded={!navHidden}
               ariaControls="subMenu"

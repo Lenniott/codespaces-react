@@ -65,7 +65,7 @@ const Programme = ({
         </div>
         <div className="relative ml-auto">
           <Button
-            preset="plain"
+            preset="transparent"
             size="small"
             iconOnly={true}
             popover={true}

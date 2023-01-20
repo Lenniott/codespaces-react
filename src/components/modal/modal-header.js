@@ -12,7 +12,7 @@ const ModalHeader = ({ title, icon, customHeader, hide }) => {
             <div className="text-xl pr-4 truncate flex-1 min-w-0">{title}</div>
           )}
           <Button
-            preset="plain"
+            preset="transparent"
             onClick={hide}
             title="Close"
             iconOnly={true}
@@ -32,7 +32,7 @@ ModalHeader.propTypes = {
   title: PropTypes.string,
   icon: PropTypes.node,
   customHeader: PropTypes.node,
-  hide: PropTypes.func
+  hide: PropTypes.func,
 };
 
 export { ModalHeader };

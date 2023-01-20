@@ -107,13 +107,21 @@ const Button = forwardRef((props, ref) => {
     preset: {
       primary:
         "bg-primary text-white border-primary hover:bg-primary-dark focus-visible:bg-primary-dark focus-visible:border-primary-darkest",
-      "primary-outline":
-        "bg-white text-primary border-primary hover:bg-primary-lightest focus-visible:bg-primary-lightest focus-visible:border-primary-darkest",
       secondary:
+        "bg-white text-primary border-primary hover:bg-primary-lightest focus-visible:bg-primary-lightest focus-visible:border-primary-darkest",
+      danger:
+        "bg-rose-600 text-white border-rose-600 hover:bg-rose-700 focus-visible:bg-rose-700 focus-visible:border-rose-900",
+      "danger-outline":
+        "bg-white text-rose-700 border-rose-600 hover:bg-rose-50 focus-visible:bg-rose-50 focus-visible:border-rose-800",
+      success:
+        "bg-teal-600 text-white border-teal-600 hover:bg-teal-700 focus-visible:bg-teal-700 focus-visible:border-teal-900",
+      "success-outline":
+        "bg-white text-teal-700 border-teal-600 hover:bg-teal-50 focus-visible:bg-teal-50 focus-visible:border-teal-800",
+      default:
         "bg-white text-neutral-700 border-neutral-300 hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-neutral-500",
-      white:
+      "no-border":
         "bg-white text-neutral-700 border-transparent hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-neutral-500",
-      plain:
+      transparent:
         "shadow-none text-neutral-700 border-transparent hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-neutral-500",
     },
     iconOnly: {
@@ -247,7 +255,17 @@ Button.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node,
   size: PropTypes.oneOf(["small", "medium"]),
-  preset: PropTypes.oneOf(["primary", "secondary", "plain"]),
+  preset: PropTypes.oneOf([
+    "primary",
+    "secondary",
+    "danger",
+    "danger-outline",
+    "success",
+    "success-outline",
+    "default",
+    "no-border",
+    "transparent",
+  ]),
   type: PropTypes.oneOf(["button", "submit", "reset"]),
   iconOnly: PropTypes.bool,
   onClick: PropTypes.func,
@@ -270,7 +288,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   size: "medium",
-  preset: "secondary",
+  preset: "default",
   type: "button",
   fluid: "false",
   popoverToggle: true,
