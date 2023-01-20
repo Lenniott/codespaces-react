@@ -6,9 +6,9 @@ const PopoverMenuItem = ({ icon, title, link, button, onClick, preset }) => {
   const menuItemClasses = {
     base: "text-left w-full flex gap-3 items-center py-2 px-2 hover:underline [&>i>svg]:w-4 [&>i>svg]:h-4",
     preset: {
-      default: "text-neutral-900 [&>.icon]:text-neutral-400",
-      primary: "text-primary [&>.icon]:text-primary/50",
-      danger: "text-red-600 [&>.icon]:text-red-600/50",
+      default: "text-neutral-900 [&>i]:text-neutral-400",
+      primary: "text-primary [&>i]:text-primary/50",
+      danger: "text-red-600 [&>i]:text-red-600/50",
     },
   };
 
