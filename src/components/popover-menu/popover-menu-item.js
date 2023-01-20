@@ -8,7 +8,7 @@ const PopoverMenuItem = ({ icon, title, link, button, onClick, preset }) => {
     preset: {
       default: "text-neutral-900 [&>i]:text-neutral-400",
       primary: "text-primary [&>i]:text-primary/50",
-      danger: "text-red-600 [&>i]:text-red-600/50",
+      danger: "text-rose-600 [&>i]:text-rose-600/50",
     },
   };
 
