@@ -53,6 +53,7 @@ export default function Header(props) {
                   <PopoverMenuSeperator />
                   <PopoverMenuItem
                     title="Log Out"
+                    preset="danger"
                     button={true}
                     icon={<LogOut />}
                   />
