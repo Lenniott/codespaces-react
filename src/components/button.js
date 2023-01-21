@@ -22,6 +22,7 @@ const Button = forwardRef((props, ref) => {
     iconOnly,
     fluid,
     className,
+    ariaLabel,
     ariaExpanded,
     ariaControls,
     popoverContent,
@@ -157,6 +158,7 @@ const Button = forwardRef((props, ref) => {
         className={className ? className : buttonClassName}
         onClick={togglePopover}
         title={title}
+        aria-label={ariaLabel}
         aria-expanded={ariaExpanded}
         aria-controls={ariaControls}
       >
@@ -222,8 +224,7 @@ const Button = forwardRef((props, ref) => {
       className={className ? className : buttonClassName}
       onClick={onClick}
       title={title}
-      aria-expanded={ariaExpanded}
-      aria-controls={ariaControls}
+      aria-label={ariaLabel}
     >
       {children && <i>{children}</i>}
       {label && (
@@ -255,6 +256,7 @@ Button.propTypes = {
   iconOnly: PropTypes.bool,
   onClick: PropTypes.func,
   fluid: PropTypes.oneOf(["false", "true"]),
+  ariaLabel: PropTypes.string,
   ariaExpanded: PropTypes.bool,
   ariaControls: PropTypes.string,
   className: PropTypes.string,

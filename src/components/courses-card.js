@@ -17,7 +17,9 @@ import {
 const CoursesCard = ({ link, title, image }) => {
   return (
     <li className="relative cursor-pointer group bg-white aspect-[5/6] sm:aspect-[4/6]">
-      <Link to={link} className="inset-0 absolute"></Link>
+      <Link to={link} className="inset-0 absolute">
+        <span class="sr-only">Navigate to {title}</span>
+      </Link>
       <div className="border border-white">
         <img
           className="block aspect-[2/1] object-cover"
@@ -39,6 +41,7 @@ const CoursesCard = ({ link, title, image }) => {
       </div>
       <div className="absolute top-3 right-3">
         <Button
+          ariaLabel="Course options"
           preset="white"
           size="small"
           iconOnly={true}

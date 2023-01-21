@@ -9,7 +9,7 @@ export default function Courses() {
     <>
       <Header />
       <Navigation />
-      <main className="p-6">
+      <main id="main" className="p-6">
         <div className="max-w-7xl mx-auto">
           <header className="mb-6 flex items-center justify-between">
             <div className="text-xl">Courses</div>

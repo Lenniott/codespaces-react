@@ -8,7 +8,7 @@ export default function CourseForum() {
       <Header CourseTitle="Course Title" />
       <Navigation />
       <CourseNavigation />
-      <main className="p-6">
+      <main id="main" className="p-6">
         <div className="max-w-7xl mx-auto">Course Forum Page</div>
       </main>
     </>

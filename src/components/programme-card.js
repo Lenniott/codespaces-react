@@ -34,6 +34,7 @@ const Programme = ({
           className="absolute inset-0"
           type="button"
           onClick={() => setVisible(!visible)}
+          aria-label={`${!visible ? "Open" : "Close"} programme`}
         ></button>
         <div className="relative">
           <ChevronDown
@@ -65,6 +66,7 @@ const Programme = ({
         </div>
         <div className="relative ml-auto">
           <Button
+            ariaLabel="Programme options"
             preset="transparent"
             size="small"
             iconOnly={true}

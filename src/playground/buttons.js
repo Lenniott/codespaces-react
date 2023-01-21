@@ -4,7 +4,7 @@ import { Plus } from "react-feather";
 export default function Buttons() {
   return (
     <>
-      <main className="p-6">
+      <main id="main" className="p-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8 text-xl">Buttons Test Page</div>
           <section className="bg-white p-6">

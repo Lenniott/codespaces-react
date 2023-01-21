@@ -8,6 +8,12 @@ import { PopoverMenuSeperator } from "./popover-menu/popover-menu-seperator";
 export default function Header(props) {
   return (
     <header className="bg-white p-6">
+      <a
+        href="#main"
+        class="mb-8 text-center bg-neutral-900 text-neutral-100 text-xl sr-only focus:not-sr-only py-1 px-3"
+      >
+        Skip to main content
+      </a>
       <div className="max-w-7xl mx-auto">
         <div className="flex mb-6 relative">
           <Link to="/home">

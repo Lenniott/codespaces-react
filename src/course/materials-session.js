@@ -35,7 +35,7 @@ export default function CourseMaterialsSession() {
       <Header CourseTitle="Course Title" />
       <Navigation />
       <CourseNavigation />
-      <main className="p-6">
+      <main id="main" className="p-6">
         <div className="max-w-7xl mx-auto">
           <header className="flex gap-3 items-center">
             <nav aria-label="Breadcrumb" className="min-w-0 flex-grow text-xl">

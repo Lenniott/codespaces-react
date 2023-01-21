@@ -10,7 +10,7 @@ export default function CourseNewsfeed() {
       <Header CourseTitle="Course Title" />
       <Navigation />
       <CourseNavigation />
-      <main className="p-6">
+      <main id="main" className="p-6">
         <div className="max-w-7xl mx-auto">
           <header className="mb-6 flex items-center justify-between">
             <div className="text-xl">Newsfeed</div>
