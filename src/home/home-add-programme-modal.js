@@ -58,7 +58,7 @@ const HomeAddProgrammeModal = ({ visible, hide }) => {
                   <div className="inset-0 absolute transition-colors bg-black/0 group-hover/upload:bg-black/20"></div>
                   <div className="absolute top-3 left-3 right-3 flex justify-between">
                     <Button
-                      preset="no-border"
+                      preset="white"
                       size="small"
                       iconOnly="true"
                       title="Replace Logo"
@@ -66,7 +66,7 @@ const HomeAddProgrammeModal = ({ visible, hide }) => {
                       <UploadCloud className="w-4 h-4" />
                     </Button>
                     <Button
-                      preset="no-border"
+                      preset="white"
                       size="small"
                       iconOnly="true"
                       title="Remove Logo"

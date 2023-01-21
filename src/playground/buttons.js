@@ -17,7 +17,7 @@ export default function Buttons() {
               <Button preset="success" label="Success"></Button>
               <Button preset="success-outline" label="Success Outline"></Button>
               <Button preset="default" label="Default"></Button>
-              <Button preset="no-border" label="No Border"></Button>
+              <Button preset="white" label="White"></Button>
               <Button preset="transparent" label="Transparent"></Button>
             </div>
           </section>
@@ -45,7 +45,7 @@ export default function Buttons() {
               <Button preset="default" label="Default">
                 <Plus />
               </Button>
-              <Button preset="no-border" label="No Border">
+              <Button preset="white" label="White">
                 <Plus />
               </Button>
               <Button preset="transparent" label="Transparent">
@@ -85,7 +85,7 @@ export default function Buttons() {
               <Button preset="default" title="Default" iconOnly={true}>
                 <Plus />
               </Button>
-              <Button preset="no-border" title="No Border" iconOnly={true}>
+              <Button preset="white" title="White" iconOnly={true}>
                 <Plus />
               </Button>
               <Button preset="transparent" title="Transparent" iconOnly={true}>

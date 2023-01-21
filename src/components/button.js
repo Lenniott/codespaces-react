@@ -118,8 +118,8 @@ const Button = forwardRef((props, ref) => {
         "bg-white text-teal-700 border-teal-600 hover:bg-teal-50 focus-visible:bg-teal-50 focus-visible:border-teal-800",
       default:
         "bg-white text-neutral-700 border-neutral-300 hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-neutral-500",
-      "no-border":
-        "bg-white text-neutral-700 border-transparent hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-neutral-500",
+      white:
+        "bg-white text-neutral-700 border-transparent shadow-none hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-neutral-500",
       transparent:
         "shadow-none text-neutral-700 border-transparent hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-neutral-500",
     },
@@ -248,7 +248,7 @@ Button.propTypes = {
     "success",
     "success-outline",
     "default",
-    "no-border",
+    "white",
     "transparent",
   ]),
   type: PropTypes.oneOf(["button", "submit", "reset"]),

@@ -39,7 +39,7 @@ const CoursesCard = ({ link, title, image }) => {
       </div>
       <div className="absolute top-3 right-3">
         <Button
-          preset="no-border"
+          preset="white"
           size="small"
           iconOnly={true}
           popoverWidth="w-40"
