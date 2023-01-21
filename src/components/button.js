@@ -121,7 +121,7 @@ const Button = forwardRef((props, ref) => {
       white:
         "bg-white text-neutral-700 border-transparent shadow-none hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-neutral-500",
       transparent:
-        "shadow-none text-neutral-700 border-transparent hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-neutral-500",
+        "shadow-none text-neutral-700 border-transparent hover:bg-black/5 focus-visible:bg-black/5 focus-visible:border-neutral-500",
     },
     iconOnly: {
       small:
