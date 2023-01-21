@@ -20,7 +20,6 @@ export default function Header(props) {
           <div className="ml-auto">
             <Button
               label="JT"
-              popover={true}
               popoverContent={
                 <PopoverMenu>
                   <PopoverMenuItem

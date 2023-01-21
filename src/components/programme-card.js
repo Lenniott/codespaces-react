@@ -68,7 +68,6 @@ const Programme = ({
             preset="transparent"
             size="small"
             iconOnly={true}
-            popover={true}
             popoverWidth="w-40"
             popoverContent={
               <PopoverMenu>

@@ -60,8 +60,8 @@ export default function Home() {
             </div>
             <Button
               preset="primary"
-              title="Add Programme"
-              iconOnly={true}
+              label="Add Programme"
+              mobileLabelHidden={true}
               onClick={showModal}
             >
               <Plus />

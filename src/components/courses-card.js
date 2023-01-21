@@ -42,7 +42,6 @@ const CoursesCard = ({ link, title, image }) => {
           preset="no-border"
           size="small"
           iconOnly={true}
-          popover={true}
           popoverWidth="w-40"
           popoverContent={
             <PopoverMenu>

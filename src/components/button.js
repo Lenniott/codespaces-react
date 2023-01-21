@@ -16,6 +16,7 @@ const Button = forwardRef((props, ref) => {
     preset,
     type,
     label,
+    mobileLabelHidden,
     title,
     onClick,
     iconOnly,
@@ -23,10 +24,8 @@ const Button = forwardRef((props, ref) => {
     className,
     ariaExpanded,
     ariaControls,
-    popover,
     popoverContent,
     popoverPlacement,
-    popoverToggle,
     popoverWidth,
     popoverHideOnClick,
   } = props;
@@ -100,21 +99,21 @@ const Button = forwardRef((props, ref) => {
     base: "transition-all duration-75 shrink-0 group/button inline-flex items-center justify-center whitespace-nowrap shadow-sm border outline-none",
     size: {
       small:
-        "h-[calc(2rem+2px)] min-w-[calc(2rem+2px)] py-1 px-2.5 gap-1.5 text-sm",
+        "h-[calc(2rem+2px)] min-w-[calc(2rem+2px)] py-1 px-2.5 gap-1.5 text-sm [&>i]:-mx-1 [&>i+span]:ml-0.5",
       medium:
-        "h-[calc(2.5rem+2px)] min-w-[calc(2.5rem+2px)] py-2 px-4 gap-2 text-base",
+        "h-[calc(2.5rem+2px)] min-w-[calc(2.5rem+2px)] py-2 px-4 gap-2 text-base [&>i]:-mx-2 [&>i+span]:ml-1.5",
     },
     preset: {
       primary:
-        "bg-primary text-white border-primary hover:bg-primary-dark focus-visible:bg-primary-dark focus-visible:border-primary-darkest",
+        "bg-primary text-white border-primary hover:bg-primary-dark hover:border-primary-dark focus-visible:bg-primary-dark focus-visible:border-primary-darkest",
       secondary:
         "bg-white text-primary border-primary hover:bg-primary-lightest focus-visible:bg-primary-lightest focus-visible:border-primary-darkest",
       danger:
-        "bg-rose-600 text-white border-rose-600 hover:bg-rose-700 focus-visible:bg-rose-700 focus-visible:border-rose-900",
+        "bg-rose-600 text-white border-rose-600 hover:bg-rose-700 hover:border-rose-700 focus-visible:bg-rose-700 focus-visible:border-rose-900",
       "danger-outline":
         "bg-white text-rose-700 border-rose-600 hover:bg-rose-50 focus-visible:bg-rose-50 focus-visible:border-rose-800",
       success:
-        "bg-teal-600 text-white border-teal-600 hover:bg-teal-700 focus-visible:bg-teal-700 focus-visible:border-teal-900",
+        "bg-teal-600 text-white border-teal-600 hover:bg-teal-700 hover:border-teal-700 focus-visible:bg-teal-700 focus-visible:border-teal-900",
       "success-outline":
         "bg-white text-teal-700 border-teal-600 hover:bg-teal-50 focus-visible:bg-teal-50 focus-visible:border-teal-800",
       default:
@@ -125,12 +124,17 @@ const Button = forwardRef((props, ref) => {
         "shadow-none text-neutral-700 border-transparent hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:border-neutral-500",
     },
     iconOnly: {
-      small: "w-[calc(2rem+2px)]",
-      medium: "w-[calc(2.5rem+2px)]",
+      small:
+        "w-[calc(2rem+2px)] [&>i]:transition-transform [&>i]:duration-75 [&:hover>i]:scale-90 [&:focus-visible>i]:button:scale-90",
+      medium:
+        "w-[calc(2.5rem+2px)] [&>i]:transition-transform [&>i]:duration-75 [&:hover>i]:scale-90 [&:focus-visible>i]:button:scale-90",
     },
     fluid: {
       true: "w-full",
       false: "",
+    },
+    mobileLabelHidden: {
+      true: "[&>span]:hidden [&>span]:sm:!inline",
     },
   };
 
@@ -139,33 +143,24 @@ const Button = forwardRef((props, ref) => {
     buttonClasses.size[size],
     buttonClasses.preset[preset],
     buttonClasses.fluid[fluid],
+    buttonClasses.mobileLabelHidden[mobileLabelHidden],
     {
       [buttonClasses.iconOnly[size]]: iconOnly,
     }
   );
 
-  return popover ? (
+  return popoverContent ? (
     <OutsideClick hidePopover={hidePopover}>
       <button
         ref={buttonRef}
         type={type}
         className={className ? className : buttonClassName}
-        onClick={popoverToggle ? togglePopover : showPopover}
+        onClick={togglePopover}
         title={title}
         aria-expanded={ariaExpanded}
         aria-controls={ariaControls}
       >
-        {children && (
-          <span
-            className={
-              iconOnly
-                ? "transition-transform duration-75 group-hover/button:scale-90 group-focus-visible/button:scale-90"
-                : " "
-            }
-          >
-            {children}
-          </span>
-        )}
+        {children && <i>{children}</i>}
         {label && (
           <span className="relative truncate after:transition-all after:opacity-0 after:absolute after:left-0 after:right-0 after:bottom-px after:h-px after:bg-current after:w-0 group-hover/button:after:w-full group-focus-visible/button:after:w-full group-hover/button:after:opacity-100 group-focus-visible/button:after:opacity-100">
             {label}
@@ -211,7 +206,7 @@ const Button = forwardRef((props, ref) => {
             onClick={(e) => e.stopPropagation()}
           >
             <div
-              onClick={popoverHideOnClick && hidePopover}
+              onClick={popoverHideOnClick ? hidePopover : null}
               className="block px-4 py-2 text-sm"
             >
               {popoverContent}
@@ -230,17 +225,7 @@ const Button = forwardRef((props, ref) => {
       aria-expanded={ariaExpanded}
       aria-controls={ariaControls}
     >
-      {children && (
-        <span
-          className={
-            iconOnly
-              ? "transition-transform duration-75 group-hover/button:scale-90 group-focus-visible/button:scale-90"
-              : " "
-          }
-        >
-          {children}
-        </span>
-      )}
+      {children && <i>{children}</i>}
       {label && (
         <span className="relative truncate after:transition-all after:opacity-0 after:absolute after:left-0 after:right-0 after:bottom-px after:h-px after:bg-current after:w-0 group-hover/button:after:w-full group-focus-visible/button:after:w-full group-hover/button:after:opacity-100 group-focus-visible/button:after:opacity-100">
           {label}
@@ -273,7 +258,6 @@ Button.propTypes = {
   ariaExpanded: PropTypes.bool,
   ariaControls: PropTypes.string,
   className: PropTypes.string,
-  popover: PropTypes.bool,
   popoverContent: PropTypes.node,
   popoverPlacement: PropTypes.oneOf([
     "top-left",
@@ -281,7 +265,6 @@ Button.propTypes = {
     "bottom-right",
     "bottom-left",
   ]),
-  popoverToggle: PropTypes.bool,
   popoverWidth: PropTypes.string,
   popoverHideOnClick: PropTypes.bool,
 };
@@ -291,7 +274,6 @@ Button.defaultProps = {
   preset: "default",
   type: "button",
   fluid: "false",
-  popoverToggle: true,
   popoverPlacement: "bottom-left",
   popoverHideOnClick: true,
 };
