@@ -9,7 +9,7 @@ export default function Newsfeed() {
     <>
       <Header />
       <Navigation />
-      <main className="p-6">
+      <main id="main" className="p-6">
         <div className="max-w-7xl mx-auto">
           <header className="mb-6 flex items-center justify-between">
             <div className="text-xl">Newsfeed</div>
@@ -21,7 +21,11 @@ export default function Newsfeed() {
             <div className="lg:col-span-3">
               <section className="bg-white p-6 space-y-6">
                 <div className="text-xl">Business Analytics Online 2020</div>
-                <p>Welcome to your new programme. This is the programme newsfeed where you can post news for students. Click below to add your first post.</p>
+                <p>
+                  Welcome to your new programme. This is the programme newsfeed
+                  where you can post news for students. Click below to add your
+                  first post.
+                </p>
                 <Button preset="primary" label="Add Post"></Button>
               </section>
             </div>

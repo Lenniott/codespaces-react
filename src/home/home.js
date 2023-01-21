@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Header home="true" />
-      <main className="p-6">
+      <main id="main" className="p-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-6 flex items-center gap-4">
             <form className="flex-grow">
@@ -60,8 +60,8 @@ export default function Home() {
             </div>
             <Button
               preset="primary"
-              title="Add Programme"
-              iconOnly={true}
+              label="Add Programme"
+              mobileLabelHidden={true}
               onClick={showModal}
             >
               <Plus />

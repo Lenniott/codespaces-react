@@ -11,7 +11,7 @@ export default function Settings() {
     <>
       <Header />
       <Navigation />
-      <main className="p-6">
+      <main id="main" className="p-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-xl mb-6">Settings</div>
         </div>

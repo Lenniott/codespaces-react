@@ -47,7 +47,7 @@ export default function CourseCalendar() {
     { date: "2022-02-03" },
     { date: "2022-02-04" },
     { date: "2022-02-05" },
-    { date: "2022-02-06" }
+    { date: "2022-02-06" },
   ];
   const meetings = [
     {
@@ -58,7 +58,7 @@ export default function CourseCalendar() {
       start: "1:00 PM",
       startDatetime: "2022-01-21T13:00",
       end: "2:30 PM",
-      endDatetime: "2022-01-21T14:30"
+      endDatetime: "2022-01-21T14:30",
     },
     {
       id: 2,
@@ -68,8 +68,8 @@ export default function CourseCalendar() {
       start: "3:00 PM",
       startDatetime: "2022-01-21T15:00",
       end: "4:30 PM",
-      endDatetime: "2022-01-21T16:30"
-    }
+      endDatetime: "2022-01-21T16:30",
+    },
   ];
 
   function classNames(...classes) {
@@ -81,7 +81,7 @@ export default function CourseCalendar() {
       <Header CourseTitle="Course Title" />
       <Navigation />
       <CourseNavigation />
-      <main className="p-6">
+      <main id="main" className="p-6">
         <div className="max-w-7xl mx-auto">
           <header className="mb-6 flex items-center justify-between">
             <div className="text-xl">Calendar</div>

@@ -58,10 +58,10 @@ const CourseCard = ({
       </Link>
       <div className="absolute bottom-2 right-2">
         <Button
+          ariaLabel="Course options"
           preset="transparent"
           size="small"
           iconOnly={true}
-          popover={true}
           popoverWidth="w-40"
           popoverContent={
             <PopoverMenu>

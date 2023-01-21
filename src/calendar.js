@@ -52,7 +52,8 @@ export default function Calendar() {
     {
       id: 1,
       name: "Leslie Alexander",
-      imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
       start: "1:00 PM",
       startDatetime: "2022-01-21T13:00",
       end: "2:30 PM",
@@ -61,7 +62,8 @@ export default function Calendar() {
     {
       id: 2,
       name: "Leslie Alexander",
-      imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
       start: "3:00 PM",
       startDatetime: "2022-01-21T15:00",
       end: "4:30 PM",
@@ -77,7 +79,7 @@ export default function Calendar() {
     <>
       <Header />
       <Navigation />
-      <main className="p-6">
+      <main id="main" className="p-6">
         <div className="max-w-7xl mx-auto">
           <header className="mb-6 flex items-center justify-between">
             <div className="text-xl">Calendar</div>
@@ -108,14 +110,26 @@ export default function Calendar() {
               </div>
               <div className="mt-2 grid grid-cols-7 text-sm">
                 {days.map((day, dayIdx) => (
-                  <div key={day.date} className={classNames(dayIdx > 6 && "border-t border-neutral-175", "py-2")}>
+                  <div
+                    key={day.date}
+                    className={classNames(
+                      dayIdx > 6 && "border-t border-neutral-175",
+                      "py-2"
+                    )}
+                  >
                     <button
                       type="button"
                       className={classNames(
                         day.isSelected && "text-white",
                         !day.isSelected && day.isToday && "text-primary",
-                        !day.isSelected && !day.isToday && day.isCurrentMonth && "text-neutral-900",
-                        !day.isSelected && !day.isToday && !day.isCurrentMonth && "text-neutral-400",
+                        !day.isSelected &&
+                          !day.isToday &&
+                          day.isCurrentMonth &&
+                          "text-neutral-900",
+                        !day.isSelected &&
+                          !day.isToday &&
+                          !day.isCurrentMonth &&
+                          "text-neutral-400",
                         day.isSelected && day.isToday && "bg-primary",
                         day.isSelected && !day.isToday && "bg-primary",
                         !day.isSelected && "hover:bg-neutral-200",
@@ -123,7 +137,9 @@ export default function Calendar() {
                         "mx-auto flex h-8 w-8 items-center justify-center rounded-full"
                       )}
                     >
-                      <time dateTime={day.date}>{day.date.split("-").pop().replace(/^0/, "")}</time>
+                      <time dateTime={day.date}>
+                        {day.date.split("-").pop().replace(/^0/, "")}
+                      </time>
                     </button>
                   </div>
                 ))}
@@ -135,12 +151,25 @@ export default function Calendar() {
               </div>
               <ol className="mt-4 divide-y text-sm text-neutral-500">
                 {meetings.map((meeting) => (
-                  <li key={meeting.id} className="group flex items-center space-x-3 py-3">
-                    <img src={meeting.imageUrl} alt="" className="h-10 w-10 flex-none rounded-full" />
+                  <li
+                    key={meeting.id}
+                    className="group flex items-center space-x-3 py-3"
+                  >
+                    <img
+                      src={meeting.imageUrl}
+                      alt=""
+                      className="h-10 w-10 flex-none rounded-full"
+                    />
                     <div className="flex-auto">
                       <p className="text-neutral-900">{meeting.name}</p>
                       <p>
-                        <time dateTime={meeting.startDatetime}>{meeting.start}</time> - <time dateTime={meeting.endDatetime}>{meeting.end}</time>
+                        <time dateTime={meeting.startDatetime}>
+                          {meeting.start}
+                        </time>{" "}
+                        -{" "}
+                        <time dateTime={meeting.endDatetime}>
+                          {meeting.end}
+                        </time>
                       </p>
                     </div>
                   </li>

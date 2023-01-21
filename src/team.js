@@ -6,7 +6,7 @@ export default function Team() {
     <>
       <Header />
       <Navigation />
-      <main className="p-6">
+      <main id="main" className="p-6">
         <div className="max-w-7xl mx-auto">Team Page</div>
       </main>
     </>
