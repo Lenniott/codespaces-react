@@ -10,7 +10,7 @@ export default function Header(props) {
     <header className="bg-white p-6">
       <a
         href="#main"
-        class="mb-8 text-center bg-neutral-900 text-neutral-100 text-xl sr-only focus:not-sr-only py-1 px-3"
+        class="z-50 !absolute !top-0 !left-0 !right-0 !p-6 !block underline text-center bg-neutral-900 text-neutral-100 text-xl sr-only focus:not-sr-only"
       >
         Skip to main content
       </a>
