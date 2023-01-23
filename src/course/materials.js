@@ -39,14 +39,18 @@ export default function CourseMaterials() {
       <Header CourseTitle="Course Title" />
       <Navigation />
       <CourseNavigation />
-      <main className="p-6">
+      <main id="main" className="p-6">
         <div className="max-w-7xl mx-auto">
           <header className="flex gap-3 items-center">
             <nav aria-label="Breadcrumb" className="min-w-0 flex-grow text-xl">
               <ol className="flex gap-2 [&>li:first-child>span]:hidden">
                 <li className="min-w-0 flex gap-2">
                   <span aria-hidden="true">/</span>
-                  <Link to="/Course/Materials" className="truncate hover:underline" title="Materials">
+                  <Link
+                    to="/Course/Materials"
+                    className="truncate hover:underline"
+                    title="Materials"
+                  >
                     Materials
                   </Link>
                 </li>
@@ -57,7 +61,7 @@ export default function CourseMaterials() {
                 <MoreVertical className="h-5 w-5" />
               </Button>
               <Button preset="primary" iconOnly={true}>
-                <Plus className="h-5 w-5" />
+                <Plus />
               </Button>
             </div>
           </header>
@@ -66,7 +70,15 @@ export default function CourseMaterials() {
               <ul className="grid gap-6 grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(19rem,1fr))] md:grid-cols-[repeat(auto-fill,minmax(21rem,1fr))]">
                 {cardItems.map((item, i) => (
                   <li key={i}>
-                    <MaterialCard count={i + 1} title={item.title} link={item.link} screenCount={item.screenCount} duration={item.duration} type={item.type} platform={item.platform} />
+                    <MaterialCard
+                      count={i + 1}
+                      title={item.title}
+                      link={item.link}
+                      screenCount={item.screenCount}
+                      duration={item.duration}
+                      type={item.type}
+                      platform={item.platform}
+                    />
                   </li>
                 ))}
               </ul>
