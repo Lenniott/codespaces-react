@@ -1,13 +1,14 @@
 import Header from "../components/header";
 import { Button } from "../components/button";
 import { useState } from "react";
-import { Search, Plus } from "react-feather";
+import { Search, Plus, Eye, EyeOff } from "react-feather";
 import { Programme } from "../components/programme-card";
 import { CourseCard } from "../components/course-card";
 import { HomeAddProgrammeModal } from "./home-add-programme-modal";
 import { Main } from "../components/main";
 
 export default function Home() {
+  const [hiddenProgrammesState, setHiddenProgrammesState] = useState(true);
   const [modalState, setModalState] = useState(false);
   const showModal = () => {
     setModalState(true);
@@ -32,15 +33,27 @@ export default function Home() {
                 type="search"
                 name="search"
                 id="search"
-                className="!pl-10"
+                className="!pl-10 !pr-7"
                 placeholder="Filter programmes and courses"
               />
+              <div className="absolute top-0 right-0 bottom-0 md:hidden">
+                <Button
+                  preset="transparent"
+                  iconOnly={true}
+                  title="Show hidden programmes"
+                >
+                  {hiddenProgrammesState ? (
+                    <EyeOff className="h-5 w-5 text-neutral-500" />
+                  ) : (
+                    <Eye className="h-5 w-5 text-neutral-500" />
+                  )}
+                </Button>
+              </div>
             </div>
           </form>
           <div className="hidden relative md:flex gap-1.5 items-center">
             <input
               id="showHidden"
-              aria-describedby="showHidden-description"
               name="showHidden"
               type="checkbox"
               className="h-[1.15rem] w-[1.15rem] border border-neutral-300 text-primary focus-visible:border-primary"
@@ -53,9 +66,6 @@ export default function Home() {
               >
                 Show hidden programmes
               </label>
-              <span id="showHidden-description" className="sr-only">
-                Show hidden programmes
-              </span>
             </div>
           </div>
           <Button

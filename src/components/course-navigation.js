@@ -5,40 +5,40 @@ export default function CourseNavigation() {
   const navigationItems = [
     {
       title: "Newsfeed",
-      href: "/Course/Newsfeed"
+      href: "/Course/Newsfeed",
     },
     {
       title: "Calendar",
-      href: "/Course/Calendar"
+      href: "/Course/Calendar",
     },
     {
       title: "Materials",
-      href: "/Course/Materials"
+      href: "/Course/Materials",
     },
     {
       title: "Overview",
-      href: "/Course/Overview"
+      href: "/Course/Overview",
     },
     {
       title: "Assessment",
-      href: "/Course/Assessment"
+      href: "/Course/Assessment",
     },
     {
       title: "Readings",
-      href: "/Course/Readings"
+      href: "/Course/Readings",
     },
     {
       title: "Live Classes",
-      href: "/Course/LiveClasses"
+      href: "/Course/LiveClasses",
     },
     {
       title: "Forum",
-      href: "/Course/Forum"
+      href: "/Course/Forum",
     },
     {
       title: "Settings",
-      href: "/Course/Settings"
-    }
+      href: "/Course/Settings",
+    },
   ];
   return (
     <nav
@@ -50,7 +50,7 @@ export default function CourseNavigation() {
           to="/Course/Newsfeed"
           className="shrink-0 flex items-center min-w-0 text-white font-normal"
         >
-          <div className="will-change-[max-width] transition-[max-width] duration-700 delay-500 hover:max-w-[40ch] max-w-[17ch] sm:max-w-[25ch] leading-loose hover:underline truncate">
+          <div className="will-change-[max-width] transition-[max-width] duration-700 delay-500 hover:max-w-[40ch] max-w-[17ch] sm:max-w-[26ch] leading-loose hover:underline truncate">
             Text Mining for Economics and Finance
           </div>
         </Link>

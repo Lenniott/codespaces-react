@@ -58,15 +58,15 @@ export default function CourseMaterialsSessionScreen3() {
           <div className="md:col-span-3 bg-white p-6 self-start">
             Select 'Edit Screen' to get started.
           </div>
-          <div class="self-start grid gap-6">
-            <section class="bg-white p-6">
+          <div className="self-start grid gap-6">
+            <section className="bg-white p-6">
               <div className="text-lg mb-3">Screen Summary</div>
               <div>
                 Participants are introduced to the aims and learning outcomes of
                 this week.
               </div>
             </section>
-            <section class="bg-white p-6">
+            <section className="bg-white p-6">
               <div className="text-lg mb-3">Duration</div>
               <div>
                 <div
@@ -78,7 +78,7 @@ export default function CourseMaterialsSessionScreen3() {
                 </div>
               </div>
             </section>
-            <section class="bg-white p-6">
+            <section className="bg-white p-6">
               <div className="text-lg mb-3">Platform</div>
               <div>
                 <div title="Online" className="flex items-center gap-2">

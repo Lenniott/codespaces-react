@@ -17,7 +17,7 @@ export default function Newsfeed() {
             <Plus />
           </Button>
         </header>
-        <div class="lg:grid lg:grid-cols-4 lg:gap-6">
+        <div className="lg:grid lg:grid-cols-4 lg:gap-6">
           <div className="lg:col-span-3">
             <section className="bg-white p-6 space-y-6">
               <div className="text-xl">Business Analytics Online 2020</div>

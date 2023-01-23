@@ -17,7 +17,7 @@ export default function Courses() {
             <Plus />
           </Button>
         </header>
-        <div class="lg:grid lg:grid-cols-4 lg:gap-10">
+        <div className="lg:grid lg:grid-cols-4 lg:gap-10">
           <div className="lg:col-span-3">
             <section>
               <ul className="grid gap-3 sm:gap-4 grid-cols-[repeat(auto-fill,minmax(11rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(14.5rem,1fr))]">
