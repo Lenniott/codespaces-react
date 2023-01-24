@@ -120,7 +120,7 @@ export default function Navigation() {
         id="subMenu"
         className={`${
           navHidden ? " hidden " : " block "
-        } text-sm peer origin-top-right animate-popover empty:hidden bg-white shadow-lg shadow-neutral-800/10 ring-1 ring-black/5 focus:outline-none [&>*]:!m-0 [&>li>a]:bg-white [&>li>a>span]:!text-neutral-700 [&>li>a:hover>span]:underline [&>li>a:hover>span]:decoration-neutral-500 absolute top-10 right-5 z-20 min-w-[10rem] `}
+        } text-sm peer origin-top-right animate-popover empty:hidden bg-white shadow-lg shadow-neutral-800/10 ring-1 ring-black/5 focus:outline-none [&>*]:!m-0 [&>li>a]:bg-white [&>li>a>span]:!text-neutral-700 [&>li>a:hover>span]:underline [&>li>a:hover>span]:decoration-neutral-500 absolute top-10 right-4 z-20 min-w-[10rem] `}
         aria-hidden="true"
       >
         {navigationItems.map((item, i) => (

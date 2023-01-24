@@ -46,17 +46,6 @@ export default function CourseNavigation() {
       className="-mt-2 bg-primary whitespace-nowrap px-6 overflow-auto relative"
     >
       <div className="flex items-center max-w-7xl mx-auto">
-        <Link
-          to="/Course/Newsfeed"
-          className="shrink-0 flex items-center min-w-0 text-white font-normal"
-        >
-          <div className="will-change-[max-width] transition-[max-width] duration-700 delay-[5s] hover:delay-[500ms] hover:max-w-[40ch] max-w-[17ch] sm:max-w-[26ch] leading-loose hover:underline truncate">
-            Text Mining for Economics and Finance
-          </div>
-        </Link>
-        <div className="ml-3.5 pr-4 text-white" aria-hidden="true">
-          /
-        </div>
         <ul className="flex gap-5 bg-primary">
           {navigationItems.map((item, i) => (
             <li key={i} className="last:pr-6">
