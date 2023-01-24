@@ -1,16 +1,28 @@
 import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
 import { Button } from "./button";
-import { Bell, User, Settings, HelpCircle, LogOut, Award } from "react-feather";
+import {
+  Bell,
+  User,
+  Settings,
+  HelpCircle,
+  LogOut,
+  Award,
+  Home,
+  MoreHorizontal,
+} from "react-feather";
 import { PopoverMenu } from "./popover-menu/popover-menu";
 import { PopoverMenuItem } from "./popover-menu/popover-menu-item";
 import { PopoverMenuSeperator } from "./popover-menu/popover-menu-seperator";
+import { useState } from "react";
 
 export default function Header(props) {
+  const [toggleProgrammeName, setToggleProgrammeName] = useState(false);
+
   return (
     <header className="bg-white p-6">
       <a
         href="#main"
-        class="mb-8 text-center bg-neutral-900 text-neutral-100 text-xl sr-only focus:not-sr-only py-1 px-3"
+        className="z-50 !absolute !top-0 !left-0 !right-0 !p-6 !block underline text-center bg-neutral-900 text-neutral-100 text-xl sr-only focus:not-sr-only"
       >
         Skip to main content
       </a>
@@ -70,25 +82,58 @@ export default function Header(props) {
             ></Button>
           </div>
         </div>
-        <div className="flex gap-2 text-2xl">
-          <Link title="Go to home page" to="/Home" className="shrink-0 min-w-0">
-            <h1 className="hover:underline truncate">Home</h1>
-          </Link>
-          {!props.home && (
-            <>
-              <div className="shrink-0">/</div>
-              <Link
-                title="Go to programme home page"
-                to="/Newsfeed"
-                className="min-w-0"
+        {props.home && (
+          <div className="flex gap-2 text-2xl">
+            <Link
+              title="Go to home page"
+              to="/home"
+              className="shrink-0 min-w-0"
+            >
+              <h1 className="hover:underline truncate">Home</h1>
+            </Link>
+          </div>
+        )}
+        {!props.home && (
+          <div className="flex gap-2 text-2xl">
+            <Link
+              title="Go to home page"
+              to="/home"
+              className="shrink-0 min-w-0"
+            >
+              <h1 className="hover:underline truncate">Home</h1>
+            </Link>
+            <div className="shrink-0">/</div>
+            <Link
+              title="Go to Business Analytics Online 2020"
+              to="/Newsfeed"
+              className="min-w-0"
+            >
+              <h2
+                className={`${
+                  !props.course
+                    ? " text-neutral-500 "
+                    : " max-w-[18ch] lg:max-w-full "
+                } text-2xl hover:underline truncate`}
               >
-                <h2 className="text-2xl text-neutral-500 hover:underline truncate">
-                  Business Analytics Online 2020
-                </h2>
-              </Link>
-            </>
-          )}
-        </div>
+                Business Analytics Online 2020
+              </h2>
+            </Link>
+            {props.course && (
+              <>
+                <div className="shrink-0">/</div>
+                <Link
+                  title="Go to Text Mining for Economics and Finance"
+                  to="/Course/Newsfeed"
+                  className="min-w-0"
+                >
+                  <h2 className="text-2xl text-neutral-500 hover:underline truncate">
+                    Text Mining for Economics and Finance
+                  </h2>
+                </Link>
+              </>
+            )}
+          </div>
+        )}
       </div>
     </header>
   );

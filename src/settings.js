@@ -1,5 +1,6 @@
 import Navigation from "./components/navigation";
 import Header from "./components/header";
+import { Main } from "./components/main";
 
 export default function Settings() {
   const hueValues = [];
@@ -11,11 +12,7 @@ export default function Settings() {
     <>
       <Header />
       <Navigation />
-      <main id="main" className="p-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-xl mb-6">Settings</div>
-        </div>
-      </main>
+      <Main>Settings</Main>
     </>
   );
 }
