@@ -50,7 +50,7 @@ export default function CourseNavigation() {
           to="/Course/Newsfeed"
           className="shrink-0 flex items-center min-w-0 text-white font-normal"
         >
-          <div className="will-change-[max-width] transition-[max-width] duration-700 delay-500 hover:max-w-[40ch] max-w-[17ch] sm:max-w-[26ch] leading-loose hover:underline truncate">
+          <div className="will-change-[max-width] transition-[max-width] duration-700 delay-[5s] hover:delay-[500ms] hover:max-w-[40ch] max-w-[17ch] sm:max-w-[26ch] leading-loose hover:underline truncate">
             Text Mining for Economics and Finance
           </div>
         </Link>

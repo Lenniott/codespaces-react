@@ -8,7 +8,8 @@ import { HomeAddProgrammeModal } from "./home-add-programme-modal";
 import { Main } from "../components/main";
 
 export default function Home() {
-  const [hiddenProgrammesState, setHiddenProgrammesState] = useState(true);
+  const [showHiddenProgrammesState, setShowHiddenProgrammesState] =
+    useState(false);
   const [modalState, setModalState] = useState(false);
   const showModal = () => {
     setModalState(true);
@@ -40,9 +41,16 @@ export default function Home() {
                 <Button
                   preset="transparent"
                   iconOnly={true}
-                  title="Show hidden programmes"
+                  title={
+                    !showHiddenProgrammesState
+                      ? "Show hidden programmes"
+                      : "Hide hidden programmes"
+                  }
+                  onClick={() =>
+                    setShowHiddenProgrammesState(!showHiddenProgrammesState)
+                  }
                 >
-                  {hiddenProgrammesState ? (
+                  {!showHiddenProgrammesState ? (
                     <EyeOff className="h-5 w-5 text-neutral-500" />
                   ) : (
                     <Eye className="h-5 w-5 text-neutral-500" />
@@ -53,6 +61,10 @@ export default function Home() {
           </form>
           <div className="hidden relative md:flex gap-1.5 items-center">
             <input
+              onClick={() =>
+                setShowHiddenProgrammesState(!showHiddenProgrammesState)
+              }
+              checked={showHiddenProgrammesState}
               id="showHidden"
               name="showHidden"
               type="checkbox"
