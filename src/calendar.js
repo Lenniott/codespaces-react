@@ -2,6 +2,7 @@ import Navigation from "./components/navigation";
 import Header from "./components/header";
 import { Button } from "./components/button";
 import { ChevronLeft, ChevronRight } from "react-feather";
+import { Main } from "./components/main";
 
 export default function Calendar() {
   const days = [
@@ -79,106 +80,102 @@ export default function Calendar() {
     <>
       <Header />
       <Navigation />
-      <main id="main" className="p-6">
-        <div className="max-w-7xl mx-auto">
-          <header className="mb-6 flex items-center justify-between">
-            <div className="text-xl">Calendar</div>
-            <Button label="Settings"></Button>
-          </header>
-          <div className="relative bg-white p-6 md:grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x md:divide-neutral-200">
-            <div className="md:pr-12">
-              <div className="flex items-center">
-                <div className="flex-auto text-lg">January 2023</div>
-                <Button label="Today" size="small"></Button>
-                <div className="ml-4 -space-x-px">
-                  <Button iconOnly={true} size="small">
-                    <ChevronLeft className="h-5 w-5" />
-                  </Button>
-                  <Button iconOnly={true} size="small">
-                    <ChevronRight className="h-5 w-5" />
-                  </Button>
-                </div>
-              </div>
-              <div className="mt-10 grid grid-cols-7 text-center text-xs leading-6 text-neutral-500">
-                <div>M</div>
-                <div>T</div>
-                <div>W</div>
-                <div>T</div>
-                <div>F</div>
-                <div>S</div>
-                <div>S</div>
-              </div>
-              <div className="mt-2 grid grid-cols-7 text-sm">
-                {days.map((day, dayIdx) => (
-                  <div
-                    key={day.date}
-                    className={classNames(
-                      dayIdx > 6 && "border-t border-neutral-175",
-                      "py-2"
-                    )}
-                  >
-                    <button
-                      type="button"
-                      className={classNames(
-                        day.isSelected && "text-white",
-                        !day.isSelected && day.isToday && "text-primary",
-                        !day.isSelected &&
-                          !day.isToday &&
-                          day.isCurrentMonth &&
-                          "text-neutral-900",
-                        !day.isSelected &&
-                          !day.isToday &&
-                          !day.isCurrentMonth &&
-                          "text-neutral-400",
-                        day.isSelected && day.isToday && "bg-primary",
-                        day.isSelected && !day.isToday && "bg-primary",
-                        !day.isSelected && "hover:bg-neutral-200",
-                        (day.isSelected || day.isToday) && "font-medium",
-                        "mx-auto flex h-8 w-8 items-center justify-center rounded-full"
-                      )}
-                    >
-                      <time dateTime={day.date}>
-                        {day.date.split("-").pop().replace(/^0/, "")}
-                      </time>
-                    </button>
-                  </div>
-                ))}
+      <Main>
+        <div className="mb-6 flex items-center justify-between">
+          <div className="text-xl">Calendar</div>
+          <Button label="Settings"></Button>
+        </div>
+        <div className="relative bg-white p-6 md:grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x md:divide-neutral-200">
+          <div className="md:pr-12">
+            <div className="flex items-center">
+              <div className="flex-auto text-lg">January 2023</div>
+              <Button label="Today" size="small"></Button>
+              <div className="ml-4 -space-x-px">
+                <Button iconOnly={true} size="small">
+                  <ChevronLeft className="h-5 w-5" />
+                </Button>
+                <Button iconOnly={true} size="small">
+                  <ChevronRight className="h-5 w-5" />
+                </Button>
               </div>
             </div>
-            <section className="max-h-[50vh] overflow-y-auto md:absolute static top-6 bottom-6 right-6 md:w-[calc(50%-1.5rem)] pt-8 md:pt-0 md:pl-12">
-              <div className="text-lg">
-                <time dateTime="2022-01-21">January 21, 2023</time>
-              </div>
-              <ol className="mt-4 divide-y text-sm text-neutral-500">
-                {meetings.map((meeting) => (
-                  <li
-                    key={meeting.id}
-                    className="group flex items-center space-x-3 py-3"
+            <div className="mt-10 grid grid-cols-7 text-center text-xs leading-6 text-neutral-500">
+              <div>M</div>
+              <div>T</div>
+              <div>W</div>
+              <div>T</div>
+              <div>F</div>
+              <div>S</div>
+              <div>S</div>
+            </div>
+            <div className="mt-2 grid grid-cols-7 text-sm">
+              {days.map((day, dayIdx) => (
+                <div
+                  key={day.date}
+                  className={classNames(
+                    dayIdx > 6 && "border-t border-neutral-175",
+                    "py-2"
+                  )}
+                >
+                  <button
+                    type="button"
+                    className={classNames(
+                      day.isSelected && "text-white",
+                      !day.isSelected && day.isToday && "text-primary",
+                      !day.isSelected &&
+                        !day.isToday &&
+                        day.isCurrentMonth &&
+                        "text-neutral-900",
+                      !day.isSelected &&
+                        !day.isToday &&
+                        !day.isCurrentMonth &&
+                        "text-neutral-400",
+                      day.isSelected && day.isToday && "bg-primary",
+                      day.isSelected && !day.isToday && "bg-primary",
+                      !day.isSelected && "hover:bg-neutral-200",
+                      (day.isSelected || day.isToday) && "font-medium",
+                      "mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                    )}
                   >
-                    <img
-                      src={meeting.imageUrl}
-                      alt=""
-                      className="h-10 w-10 flex-none rounded-full"
-                    />
-                    <div className="flex-auto">
-                      <p className="text-neutral-900">{meeting.name}</p>
-                      <p>
-                        <time dateTime={meeting.startDatetime}>
-                          {meeting.start}
-                        </time>{" "}
-                        -{" "}
-                        <time dateTime={meeting.endDatetime}>
-                          {meeting.end}
-                        </time>
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </section>
+                    <time dateTime={day.date}>
+                      {day.date.split("-").pop().replace(/^0/, "")}
+                    </time>
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
+          <section className="max-h-[50vh] overflow-y-auto md:absolute static top-6 bottom-6 right-6 md:w-[calc(50%-1.5rem)] pt-8 md:pt-0 md:pl-12">
+            <div className="text-lg">
+              <time dateTime="2022-01-21">January 21, 2023</time>
+            </div>
+            <ol className="mt-4 divide-y text-sm text-neutral-500">
+              {meetings.map((meeting) => (
+                <li
+                  key={meeting.id}
+                  className="group flex items-center space-x-3 py-3"
+                >
+                  <img
+                    src={meeting.imageUrl}
+                    alt=""
+                    className="h-10 w-10 flex-none rounded-full"
+                  />
+                  <div className="flex-auto">
+                    <p className="text-neutral-900">{meeting.name}</p>
+                    <p>
+                      <time dateTime={meeting.startDatetime}>
+                        {meeting.start}
+                      </time>{" "}
+                      -{" "}
+                      <time dateTime={meeting.endDatetime}>{meeting.end}</time>
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
         </div>
-      </main>
+      </Main>
     </>
   );
 }

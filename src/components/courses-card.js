@@ -18,7 +18,7 @@ const CoursesCard = ({ link, title, image }) => {
   return (
     <li className="relative cursor-pointer group bg-white aspect-[5/6] sm:aspect-[4/6]">
       <Link to={link} className="inset-0 absolute">
-        <span class="sr-only">Navigate to {title}</span>
+        <span className="sr-only">Navigate to {title}</span>
       </Link>
       <div className="border border-white">
         <img

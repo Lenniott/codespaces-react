@@ -93,7 +93,7 @@ const CourseCard = ({
 };
 
 CourseCard.propTypes = {
-  link: PropTypes.string.isRequired,
+  link: PropTypes.string,
   title: PropTypes.string.isRequired,
   image: PropTypes.string,
   code: PropTypes.string,

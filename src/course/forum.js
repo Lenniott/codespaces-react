@@ -1,6 +1,7 @@
 import Navigation from "../components/navigation";
 import Header from "../components/header";
 import CourseNavigation from "../components/course-navigation";
+import { Main } from "../components/main";
 
 export default function CourseForum() {
   return (
@@ -8,9 +9,7 @@ export default function CourseForum() {
       <Header CourseTitle="Course Title" />
       <Navigation />
       <CourseNavigation />
-      <main id="main" className="p-6">
-        <div className="max-w-7xl mx-auto">Course Forum Page</div>
-      </main>
+      <Main>Course Forum Page</Main>
     </>
   );
 }
