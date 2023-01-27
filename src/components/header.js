@@ -16,10 +16,12 @@ import { PopoverMenuSeperator } from "./popover-menu/popover-menu-seperator";
 import { useState } from "react";
 
 export default function Header(props) {
-  const [toggleProgrammeName, setToggleProgrammeName] = useState(false);
-
   return (
-    <header className="bg-white p-6">
+    <header
+      className={`${
+        props.course ? "  min-h-[7.25rem] " : " min-h-[6.5rem] "
+      } bg-white p-6 `}
+    >
       <a
         href="#main"
         className="z-50 !absolute !top-0 !left-0 !right-0 !p-6 !block underline text-center bg-neutral-900 text-neutral-100 text-xl sr-only focus:not-sr-only"
@@ -27,15 +29,37 @@ export default function Header(props) {
         Skip to main content
       </a>
       <div className="max-w-7xl mx-auto">
-        <div className="flex mb-6 relative">
-          <Link to="/home">
-            <img
-              className="w-24"
-              alt="Partner Logo"
-              src="https://ins-prod-svc-files-filesbucket-1lgcxzgrlx564.s3.eu-west-1.amazonaws.com/6167833a-3764-46d6-a27d-27fb7666c2f0.png"
-            />
-          </Link>
-          <div className="ml-auto">
+        <div className="flex relative">
+          <div className="flex flex-grow min-w-0">
+            <Link to="/home" className="flex items-center shrink-0">
+              <img
+                className="w-20 sm:w-24"
+                alt="Partner Logo"
+                src="https://ins-prod-svc-files-filesbucket-1lgcxzgrlx564.s3.eu-west-1.amazonaws.com/6167833a-3764-46d6-a27d-27fb7666c2f0.png"
+              />
+            </Link>
+            <div className="min-w-0 ml-4 pr-6 flex-col flex justify-center space-y-1.5 min-h-[3.5rem]">
+              {!props.home && (
+                <Link
+                  to="/Newsfeed"
+                  className={`${
+                    props.course ? " text-neutral-500 " : " "
+                  } text-xl leading-6 truncate hover:underline -mb-px`}
+                >
+                  Business Analytics Online 2020
+                </Link>
+              )}
+              {props.course && (
+                <Link
+                  to="/Course/Newsfeed"
+                  className="text-xl leading-6 truncate hover:underline"
+                >
+                  Text Mining for Economics and Finance
+                </Link>
+              )}
+            </div>
+          </div>
+          <div className="ml-auto flex items-center md:items-start">
             <Button
               label="JT"
               popoverContent={
@@ -82,58 +106,6 @@ export default function Header(props) {
             ></Button>
           </div>
         </div>
-        {props.home && (
-          <div className="flex gap-2 text-2xl">
-            <Link
-              title="Go to home page"
-              to="/home"
-              className="shrink-0 min-w-0"
-            >
-              <h1 className="hover:underline truncate">Home</h1>
-            </Link>
-          </div>
-        )}
-        {!props.home && (
-          <div className="flex gap-2 text-2xl">
-            <Link
-              title="Go to home page"
-              to="/home"
-              className="shrink-0 min-w-0"
-            >
-              <h1 className="hover:underline truncate">Home</h1>
-            </Link>
-            <div className="shrink-0">/</div>
-            <Link
-              title="Go to Business Analytics Online 2020"
-              to="/Newsfeed"
-              className="min-w-0"
-            >
-              <h2
-                className={`${
-                  !props.course
-                    ? " text-neutral-500 "
-                    : " max-w-[18ch] lg:max-w-full "
-                } text-2xl hover:underline truncate`}
-              >
-                Business Analytics Online 2020
-              </h2>
-            </Link>
-            {props.course && (
-              <>
-                <div className="shrink-0">/</div>
-                <Link
-                  title="Go to Text Mining for Economics and Finance"
-                  to="/Course/Newsfeed"
-                  className="min-w-0"
-                >
-                  <h2 className="text-2xl text-neutral-500 hover:underline truncate">
-                    Text Mining for Economics and Finance
-                  </h2>
-                </Link>
-              </>
-            )}
-          </div>
-        )}
       </div>
     </header>
   );

@@ -9,7 +9,7 @@ import { Main } from "../components/main";
 export default function CourseMaterialsSessionScreen1() {
   return (
     <>
-      <Header CourseTitle="Course Title" />
+      <Header CourseTitle="Course Title" course={true} />
       <Navigation />
       <CourseNavigation />
       <Main>
