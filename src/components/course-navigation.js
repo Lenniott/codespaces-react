@@ -28,8 +28,8 @@ export default function CourseNavigation() {
       href: "/Course/Readings",
     },
     {
-      title: "Live Classes",
-      href: "/Course/LiveClasses",
+      title: "Classm list",
+      href: "/Playground/LiveClasses",
     },
     {
       title: "Forum",
