@@ -135,9 +135,9 @@ export default function CourseLiveClasses() {
             <EditBtn />
           </div>
         </div>
-        <ul className="grid sm:flex place-items-start gap-4">
+        <ul className="grid grow sm:flex place-items-start gap-4">
           {checked && (
-            <il className="min-w-[250px] grid sm:grow lg:grow-0 bg-white p-4 pb-6 gap-4 lg:min-w-[320px]">
+            <il className="order-last sm:order-first min-w-full sm:min-w-[250px] grid sm:grow lg:grow-0 bg-white p-4 pb-6 gap-4 lg:min-w-[320px]">
               <span className="flex grow justify-end">
                 <XCircle />
               </span>
@@ -174,7 +174,7 @@ export default function CourseLiveClasses() {
               </Button>
             </il>
           )}
-          <il className="min-w-[250px] gap-4 bg-white p-4 grid sm:grow lg:grow-0 lg:min-w-[320px]">
+          <il className="min-w-full sm:min-w-[250px] gap-4 bg-white p-4 grid sm:grow lg:grow-0 lg:min-w-[320px]">
             <div className="bg-neutral-200 flex items-center h-16 pl-6 text-lg font-thin">
               Group A
             </div>
