@@ -83,8 +83,9 @@ export default function Header(props) {
                   <PopoverMenuSeperator />
                   <PopoverMenuItem
                     title="Partner Settings"
-                    button={true}
+                    button={false}
                     icon={<Settings />}
+                    link="/Playground/UserManager"
                   />
                   <PopoverMenuItem
                     title="Help Center"

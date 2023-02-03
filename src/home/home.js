@@ -100,51 +100,6 @@ export default function Home() {
               title="Text Mining for Economics and Finance"
               link="/Course/Newsfeed"
             />
-            <CourseCard
-              title="Text Mining for Economics and Finance"
-              link="/Course/Newsfeed"
-            />
-            <CourseCard
-              title="Text Mining for Economics and Finance"
-              link="/Course/Newsfeed"
-            />
-            <CourseCard
-              title="Text Mining for Economics and Finance"
-              link="/Course/Newsfeed"
-            />
-          </Programme>
-          <Programme
-            link="/Newsfeed"
-            title="Business Analytics Online 2020"
-            code="BM202"
-            academicYear="2023"
-          >
-            <CourseCard
-              title="Text Mining for Economics and Finance"
-              link="/Course/Newsfeed"
-            />
-          </Programme>
-          <Programme
-            link="/Newsfeed"
-            title="Business Analytics Online 2020"
-            code="BM202"
-            academicYear="2023"
-          >
-            <CourseCard
-              title="Text Mining for Economics and Finance"
-              link="/Course/Newsfeed"
-            />
-          </Programme>
-          <Programme
-            link="/Newsfeed"
-            title="Business Analytics Online 2020"
-            code="BM202"
-            academicYear="2023"
-          >
-            <CourseCard
-              title="Text Mining for Economics and Finance"
-              link="/Course/Newsfeed"
-            />
           </Programme>
         </section>
       </Main>
