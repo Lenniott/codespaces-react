@@ -24,6 +24,7 @@ import CourseMaterialsSessionScreen2 from "./course/materials-sessions-screen-2"
 import CourseMaterialsSessionScreen3 from "./course/materials-sessions-screen-3";
 import Buttons from "./playground/buttons";
 import UserManager from "./playground/userManagement";
+import ClassList from "./playground/deactiveStudent";
 
 export default function App() {
   return (
@@ -57,7 +58,7 @@ export default function App() {
           />
           <Route path="/Course/Assessment" element={<CourseAssessment />} />
           <Route path="/Course/Readings" element={<CourseReadings />} />
-          <Route path="/Course/LiveClasses" element={<CourseLiveClasses />} />
+          <Route path="/Course/ClassList" element={<ClassList />} />
           <Route path="/Course/Forum" element={<CourseForum />} />
           <Route path="/Course/Settings" element={<CourseSettings />} />
           <Route path="/KeyInfo" element={<KeyInfo />} />
