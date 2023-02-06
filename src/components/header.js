@@ -9,6 +9,7 @@ import {
   Award,
   Home,
   MoreHorizontal,
+  Users,
 } from "react-feather";
 import { PopoverMenu } from "./popover-menu/popover-menu";
 import { PopoverMenuItem } from "./popover-menu/popover-menu-item";
@@ -49,12 +50,30 @@ export default function Header(props) {
                   Business Analytics Online 2020
                 </Link>
               )}
+              {props.custom && (
+                <Link
+                  to="/Newsfeed"
+                  className={`${
+                    props.bottomTitle ? " text-neutral-500 " : " "
+                  } text-xl leading-6 truncate hover:underline -mb-px`}
+                >
+                  {props.topTitle}
+                </Link>
+              )}
               {props.course && (
                 <Link
                   to="/Course/Newsfeed"
                   className="text-xl leading-6 truncate hover:underline"
                 >
                   Text Mining for Economics and Finance
+                </Link>
+              )}
+              {props.custom && (
+                <Link
+                  to="/Playground/UserManager"
+                  className="text-xl leading-6 truncate hover:underline"
+                >
+                  {props.bottomTitle}
                 </Link>
               )}
             </div>
@@ -71,8 +90,9 @@ export default function Header(props) {
                   />
                   <PopoverMenuItem
                     title="Profile"
-                    button={true}
+                    button={false}
                     icon={<User />}
+                    link="/UserProfile"
                   />
                   <PopoverMenuItem
                     title="Grading Dashboard"
@@ -83,8 +103,13 @@ export default function Header(props) {
                   <PopoverMenuSeperator />
                   <PopoverMenuItem
                     title="Partner Settings"
-                    button={false}
+                    button={true}
                     icon={<Settings />}
+                  />
+                  <PopoverMenuItem
+                    title="People"
+                    button={false}
+                    icon={<Users />}
                     link="/Playground/UserManager"
                   />
                   <PopoverMenuItem

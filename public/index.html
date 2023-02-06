@@ -48,7 +48,8 @@
           },
           animation: {
             popover: "popover 175ms cubic-bezier(0.4, 0, 0.2, 1)",
-            sidebar: "sidebar 175ms cubic-bezier(0.4, 0, 0.2, 1)",
+            sidebarLeft: "sidebarLeft 175ms cubic-bezier(0.4, 0, 0.2, 1)",
+            sidebarRight: "sidebarRight 175ms cubic-bezier(0.4, 0, 0.2, 1)",
             modal: "modal 175ms cubic-bezier(0.4, 0, 0.2, 1)",
             modalFade: "modalFade 175ms cubic-bezier(0.4, 0, 0.2, 1)",
           },
@@ -63,9 +64,17 @@
                 transform: "scale(100%)",
               },
             },
-            sidebar: {
+            sidebarLeft: {
               "0%": {
                 transform: "translateX(5%)",
+              },
+              "100%": {
+                transform: "translateX(0%)",
+              },
+            },
+            sidebarRight: {
+              "0%": {
+                transform: "translateX(-100%)",
               },
               "100%": {
                 transform: "translateX(0%)",

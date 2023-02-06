@@ -21,6 +21,7 @@ const Button = forwardRef((props, ref) => {
     onClick,
     iconOnly,
     fluid,
+    placement,
     className,
     ariaLabel,
     ariaExpanded,
@@ -97,7 +98,7 @@ const Button = forwardRef((props, ref) => {
   }, []);
 
   const buttonClasses = {
-    base: "transition-all duration-75 shrink-0 group/button inline-flex items-center justify-center whitespace-nowrap shadow-sm border outline-none",
+    base: `transition-all duration-75 shrink-0 group/button inline-flex items-center justify-${placement} whitespace-nowrap shadow-sm border outline-none`,
     size: {
       small:
         "h-[calc(2rem+2px)] min-w-[calc(2rem+2px)] py-1 px-2.5 gap-1.5 text-sm [&>i]:-mx-1 [&>i+span]:ml-0.5",
@@ -256,6 +257,7 @@ Button.propTypes = {
   iconOnly: PropTypes.bool,
   onClick: PropTypes.func,
   fluid: PropTypes.oneOf(["false", "true"]),
+  placement: PropTypes.oneOf(["start", "center", "end"]),
   ariaLabel: PropTypes.string,
   ariaExpanded: PropTypes.bool,
   ariaControls: PropTypes.string,
@@ -276,6 +278,7 @@ Button.defaultProps = {
   preset: "default",
   type: "button",
   fluid: "false",
+  placement: "center",
   popoverPlacement: "bottom-left",
   popoverHideOnClick: true,
 };
