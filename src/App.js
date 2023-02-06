@@ -25,6 +25,8 @@ import CourseMaterialsSessionScreen3 from "./course/materials-sessions-screen-3"
 import Buttons from "./playground/buttons";
 import UserManager from "./playground/userManagement";
 import ClassList from "./playground/deactiveStudent";
+import DeactiveateUserTest from "./playground/DeactiveateUserTest";
+import UserProfile from "./playground/userProfile";
 
 export default function App() {
   return (
@@ -68,6 +70,11 @@ export default function App() {
           <Route path="/Settings" element={<Settings />} />
           <Route path="/Playground/Buttons" element={<Buttons />} />
           <Route path="/Playground/UserManager" element={<UserManager />} />
+          <Route
+            path="/Playground/UserTest"
+            element={<DeactiveateUserTest />}
+          />
+          <Route path="/UserProfile" element={<UserProfile />} />
           <Route path="*" element={<div>ERROR</div>} />
         </Routes>
       </BrowserRouter>

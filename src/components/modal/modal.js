@@ -12,6 +12,7 @@ const Modal = ({
   customFooter,
   visible,
   hide,
+  placeStart,
   dismissableMask,
   sidebar,
 }) => {
@@ -72,7 +73,11 @@ const Modal = ({
             ref={modalRef}
             className={`${
               sidebar
-                ? " animate-sidebar min-h-full ml-auto sm:max-w-sm "
+                ? `  min-h-full ${
+                    placeStart
+                      ? "animate-sidebarRight mr-auto"
+                      : "animate-sidebarLeft ml-auto"
+                  } sm:max-w-sm `
                 : " animate-modal sm:max-w-xl "
             } bg-white shadow-lg p-6 w-full flex flex-col gap-6`}
             onClick={(e) => e.stopPropagation()}
@@ -102,10 +107,12 @@ Modal.propTypes = {
   hide: PropTypes.func,
   dismissableMask: PropTypes.bool,
   sidebar: PropTypes.bool,
+  placeStart: PropTypes.bool,
 };
 
 Modal.defaultProps = {
   dismissableMask: true,
+  placeStart: false,
 };
 
 export { Modal };
